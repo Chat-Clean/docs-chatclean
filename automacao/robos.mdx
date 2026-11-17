@@ -1,6 +1,6 @@
 ---
 title: "Robôs"
-description: "Conecte um robô próprio a uma caixa de entrada por webhook para fazer o primeiro atendimento e passar a conversa para um agente."
+description: "Conecte um robô próprio a um canal por webhook para fazer o primeiro atendimento e passar a conversa para um agente."
 icon: "robot"
 ---
 
@@ -11,11 +11,11 @@ Os robôs ficam em **Automação → Robôs**, no menu lateral. Só administrado
 ## Como funciona
 
 1. Você cria o robô no ChatClean e informa a **URL do Webhook** do seu serviço.
-2. Você conecta o robô a uma caixa de entrada.
-3. A cada evento nessa caixa (mensagem criada, conversa aberta, conversa resolvida e outros), o ChatClean envia os dados para a URL do robô.
+2. Você conecta o robô a um canal.
+3. A cada evento nesse canal (mensagem criada, conversa aberta, conversa resolvida e outros), o ChatClean envia os dados para a URL do robô.
 4. O seu serviço responde ao cliente pela [API](/api-reference/introduction), usando o **Token de acesso** do robô.
 
-Com um robô ativo na caixa de entrada, as conversas novas começam com o status pendente (filtro **Pendentes** na lista de conversas): elas ficam com o robô até serem abertas para a equipe. Para passar a conversa a um agente, o seu serviço muda o status da conversa para aberta.
+Com um robô ativo no canal, as conversas novas começam com o status pendente (filtro **Pendentes** na lista de conversas): elas ficam com o robô até serem abertas para a equipe. Para passar a conversa a um agente, o seu serviço muda o status da conversa para aberta.
 
 <Note>
   Se a entrega do webhook falhar numa mensagem, a conversa pendente é marcada como aberta e aparece para a equipe com o aviso "A conversa foi marcada como aberta pelo sistema devido a um erro com o robô de atendimento."
@@ -45,11 +45,11 @@ Com um robô ativo na caixa de entrada, as conversas novas começam com o status
 
 Os dois continuam disponíveis depois em **Alterar**, na lista de robôs. Lá você também pode gerar um novo token ou um novo segredo. Ao gerar de novo, o valor anterior para de valer, então atualize o seu serviço.
 
-## Conectar o robô a uma caixa de entrada
+## Conectar o robô a um canal
 
 <Steps>
-  <Step title="Abra a caixa de entrada">
-    Em **Canais**, abra as configurações da caixa de entrada.
+  <Step title="Abra o canal">
+    Em **Canais**, abra as configurações do canal.
   </Step>
   <Step title="Configuração do Bot">
     Na aba **Configuração do Bot**, escolha o robô em **Selecione um robô de agente**.
@@ -59,7 +59,7 @@ Os dois continuam disponíveis depois em **Alterar**, na lista de robôs. Lá vo
   </Step>
 </Steps>
 
-Para tirar o robô da caixa de entrada, use **Desconectar Robô** na mesma aba.
+Para tirar o robô do canal, use **Desconectar Robô** na mesma aba.
 
 ## A lista de robôs
 

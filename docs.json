@@ -31,7 +31,7 @@
               "atendimento/conversas",
               "atendimento/responder",
               "atendimento/ao-vivo",
-              "atendimento/caixa-de-entrada",
+              "atendimento/notificacoes",
               "atendimento/contatos"
             ]
           },
@@ -155,6 +155,12 @@
       "vscode"
     ]
   },
+  "redirects": [
+    {
+      "source": "/atendimento/caixa-de-entrada",
+      "destination": "/atendimento/notificacoes"
+    }
+  ],
   "footer": {
     "socials": {
       "website": "https://chatclean.com.br"
