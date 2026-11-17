@@ -1,0 +1,71 @@
+---
+title: "Atributos Personalizados"
+description: "Crie campos próprios para conversas, contatos, empresas e negócios do funil, como plano contratado, CPF ou data da primeira compra."
+icon: "sliders"
+---
+
+Um atributo personalizado é um campo que você cria para guardar uma informação que o ChatClean não tem por padrão, como o plano contratado, o CPF ou a data da primeira compra.
+
+Os atributos ficam em **Configurações → Atributos Personalizados**. Só administradores criam e editam atributos.
+
+## Onde cada atributo se aplica
+
+A tela tem uma aba para cada tipo:
+
+| Aba | Onde o campo aparece |
+| --- | --- |
+| **Conversas** | No painel lateral da conversa, em **Informação da conversa**. |
+| **Contato** | No painel lateral da conversa, em **Atributos do contato**, e na ficha do [contato](/atendimento/contatos). |
+| **Empresa** | Na ficha da [empresa](/vendas/empresas). |
+| **Negócio** | No negócio do funil, em **Campos do negócio**. Veja [Negócios](/vendas/negocios). |
+
+## Criar um atributo
+
+<Steps>
+  <Step title="Criar">
+    Clique em **Criar atributo personalizado**.
+  </Step>
+  <Step title="Aplica-se a">
+    Em **Aplica-se a**, escolha **Conversas**, **Contato**, **Empresa** ou **Negócio**.
+  </Step>
+  <Step title="Nome e chave">
+    Preencha o **Nome para exibição**. A **Chave** é preenchida a partir do nome; ajuste se quiser. A chave identifica o campo na API e nas variáveis e não pode se repetir dentro do mesmo tipo.
+  </Step>
+  <Step title="Descrição">
+    Escreva a **Descrição** do campo. Ela é obrigatória.
+  </Step>
+  <Step title="Tipo">
+    Escolha o **Tipo** (veja a tabela abaixo).
+  </Step>
+  <Step title="Salvar">
+    Clique em **Criar**.
+  </Step>
+</Steps>
+
+### Tipos
+
+| Tipo | Para que serve |
+| --- | --- |
+| **Texto** | Texto livre. |
+| **Número** | Valores numéricos. |
+| **Link** | Um endereço da web. |
+| **Data** | Uma data. |
+| **Lista** | Uma lista de opções. Em **Listar valores**, digite cada opção e pressione Enter. A lista precisa de pelo menos um valor. |
+| **Caixa de seleção** | Sim ou não. |
+
+### Validar o formato (só para Texto)
+
+Num atributo do tipo **Texto**, marque **Habilitar validação do regex** para exigir um formato, como o de um CPF ou de um código interno:
+
+- **Expressão Regex**: o padrão que o valor precisa seguir.
+- **Orientação de validação Regex**: a dica que aparece quando o valor não segue o padrão.
+
+## Usar os atributos
+
+- **Automação**: atributos de contato e de conversa viram condições nas [regras de automação](/automacao/regras).
+- **Variáveis**: atributos de contato e de conversa aparecem na lista de variáveis das [Respostas Prontas](/automacao/respostas-prontas).
+- **Funil**: uma etapa do funil pode exigir campos do negócio preenchidos antes de o negócio entrar nela, na opção **Exigir campos preenchidos**. Veja [Funil](/vendas/funil).
+
+## Editar ou excluir
+
+Na lista (**Nome**, **Descrição**, **Tipo** e **Chave**), use **Alterar** para editar e **Excluir** para apagar. Para excluir, digite o nome do atributo para confirmar.

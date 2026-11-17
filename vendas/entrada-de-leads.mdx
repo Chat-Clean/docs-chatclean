@@ -1,0 +1,63 @@
+---
+title: "Entrada de leads"
+description: "Transforme cada conversa nova em um negócio no pipeline padrão, com filtros por canal, origem e fonte."
+icon: "user-plus"
+---
+
+Com a entrada de leads ligada, cada conversa nova que casar com as suas regras vira um negócio aberto no [pipeline padrão](/vendas/funil), na primeira etapa (**Novo contato**).
+
+<Info>
+  Só administradores configuram a entrada de leads. A configuração vale para a conta inteira, não para um pipeline só.
+</Info>
+
+## Como funciona
+
+O negócio é criado quando a conversa é atribuída a um agente, seja à mão, pela atribuição automática ou por uma automação. Nesse momento:
+
+- O agente atribuído vira o responsável pelo negócio.
+- O negócio fica ligado à conversa e ao contato. Nos detalhes, a aba **Informações** mostra a **Origem do lead**, por exemplo **Atendimento #120**.
+- O **Histórico** registra "criou em Novo contato quando o atendimento #120 foi atribuído".
+
+O ChatClean não cria um negócio novo se o contato já tem um negócio aberto na conta, em qualquer pipeline.
+
+O negócio entra em **Novo contato** sem conferir as exigências da etapa. A próxima mudança de etapa confere tudo; veja [O que cada etapa exige](/vendas/funil#o-que-cada-etapa-exige).
+
+## Ligar a entrada de leads
+
+<Steps>
+  <Step title="Abra a configuração">
+    No [Funil de vendas](/vendas/funil), abra o menu do pipeline e escolha **Entrada de leads**. Quando a entrada de leads está desligada, o topo do quadro também mostra o atalho **Ligar entrada de leads**; **Dispensar** esconde o atalho.
+  </Step>
+  <Step title="Ligue a opção">
+    Ligue **Criar um negócio para cada conversa nova**. A opção precisa de um pipeline padrão: sem pipeline, o ChatClean avisa "Crie um pipeline primeiro: ele vira o padrão."
+  </Step>
+  <Step title="Ajuste as regras">
+    Escolha os canais, as origens e as fontes (veja abaixo) e, se quiser, o aviso de dias.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+Ao desligar, as oportunidades que já estão no quadro continuam lá.
+
+## Regras
+
+| Lista | Opções |
+| --- | --- |
+| **Canais** | **Todos os canais**, ou desmarque essa opção e escolha as caixas de entrada uma a uma. |
+| **Origens** | **Catálogo**, **Facebook**, **Formulário do anúncio**, **Instagram** e **Site**. |
+| **Fontes** | **Mensagem recebida**, **Anúncio** e **Formulário**. |
+
+Desmarque o que não deve virar lead. Com tudo marcado numa lista, um canal conectado ou uma origem cadastrada depois também entra. Com mais de uma lista desmarcada, a conversa precisa casar com todas.
+
+Como o ChatClean identifica cada conversa hoje:
+
+- **Origem**: **Instagram** para conversas do Instagram, **Facebook** para conversas do Messenger e **Site** para o chat do site. Conversas sem origem conhecida, como WhatsApp e e-mail, passam pela lista **Origens** e são filtradas só por **Canais**.
+- **Fonte**: **Anúncio** quando o contato chegou por um anúncio; nos outros casos, **Mensagem recebida**.
+
+## Aviso de leads esperando
+
+Em **Avisar quando esperar mais de (dias)**, defina um prazo de 1 a 365 dias. Quando um lead fica mais tempo que isso em **Novo contato** no pipeline padrão, a coluna e o cabeçalho do quadro ganham um selo de alerta com a quantidade, por exemplo "3 leads esperando há mais de 2 dias". O selo aparece para administradores.
+
+Deixe o campo vazio para não avisar.

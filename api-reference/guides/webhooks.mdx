@@ -1,0 +1,73 @@
+---
+title: "Webhooks"
+description: "Receba os eventos da sua conta do ChatClean numa URL sua: eventos disponíveis, formato e verificação da assinatura."
+icon: "webhook"
+---
+
+Um webhook avisa a sua aplicação, em tempo real, quando algo acontece na conta: uma conversa nova, uma mensagem recebida, um contato atualizado. O ChatClean envia um `POST` com um corpo JSON para a URL que você cadastrar.
+
+## Criar um webhook
+
+<Steps>
+  <Step title="Abra as integrações">
+    Em **Configurações → Integrações**, abra **Webhook**.
+  </Step>
+  <Step title="Cadastre a URL">
+    Informe o **Nome do Webhook**, a **URL do Webhook** e marque os **Eventos** que quer receber. Clique em **Criar webhook**.
+  </Step>
+  <Step title="Guarde o segredo">
+    Ao criar, o ChatClean mostra o **Segredo** do webhook. Copie e guarde: ele serve para verificar a assinatura das chamadas. Você também encontra o segredo depois, no formulário de edição do webhook.
+  </Step>
+</Steps>
+
+Também dá para criar webhooks pela API, nas rotas de **Webhooks** desta referência.
+
+## Eventos
+
+| Evento | Quando é enviado |
+| --- | --- |
+| `conversation_created` | Uma conversa foi criada. |
+| `conversation_status_changed` | O status de uma conversa mudou (aberta, pendente, adiada, resolvida). |
+| `conversation_updated` | Uma conversa foi alterada (atribuição, etiquetas, atributos). |
+| `message_created` | Uma mensagem foi criada, recebida ou enviada. |
+| `message_updated` | Uma mensagem foi alterada (por exemplo, o status de entrega). |
+| `contact_created` | Um contato foi criado. |
+| `contact_updated` | Um contato foi alterado. |
+| `conversation_typing_on` | Alguém começou a digitar. |
+| `conversation_typing_off` | Alguém parou de digitar. |
+| `webwidget_triggered` | Um visitante abriu o chat do site. |
+| `inbox_updated` | Um canal foi alterado. |
+
+O corpo traz o nome do evento em `event` e os dados do objeto (conversa, mensagem ou contato) junto.
+
+## Verificar a assinatura
+
+Quando o webhook tem segredo, cada chamada traz três cabeçalhos:
+
+| Cabeçalho | Conteúdo |
+| --- | --- |
+| `X-Chatwoot-Delivery` | Identificador único da entrega. |
+| `X-Chatwoot-Timestamp` | Momento do envio, em segundos (Unix). |
+| `X-Chatwoot-Signature` | `sha256=` seguido do HMAC-SHA256, em hexadecimal, de `"{timestamp}.{corpo}"` com o segredo do webhook. |
+
+Os nomes dos cabeçalhos são esses mesmos. Para conferir, calcule o HMAC com o corpo exatamente como chegou:
+
+```javascript verificar-webhook.js
+import crypto from 'node:crypto';
+
+function assinaturaValida(segredo, timestamp, corpo, assinatura) {
+  const esperado = 'sha256=' + crypto
+    .createHmac('sha256', segredo)
+    .update(`${timestamp}.${corpo}`)
+    .digest('hex');
+  return crypto.timingSafeEqual(Buffer.from(esperado), Buffer.from(assinatura));
+}
+```
+
+Recuse a chamada se a assinatura não bater ou se o timestamp for antigo demais (por exemplo, mais de 5 minutos).
+
+## Boas práticas
+
+- Responda rápido, com `200`, e processe o evento depois, numa fila.
+- Use o `X-Chatwoot-Delivery` para ignorar entregas repetidas.
+- A URL precisa ser pública e usar HTTPS.

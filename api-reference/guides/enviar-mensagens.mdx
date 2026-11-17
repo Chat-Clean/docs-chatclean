@@ -1,0 +1,86 @@
+---
+title: "Enviar mensagens"
+description: "Crie um contato, abra uma conversa num canal e envie mensagens pela API, inclusive modelos aprovados do WhatsApp."
+icon: "paper-plane"
+---
+
+Este guia mostra o caminho mais comum de uma integração: garantir o contato, abrir uma conversa num canal e enviar mensagens nela. Os exemplos usam a conta `3` e o canal `7`; troque pelos seus números (veja [Introdução](/api-reference/introduction)).
+
+## Responder uma conversa que já existe
+
+Se a conversa já existe, envie a mensagem direto nela. O número da conversa é o mesmo que aparece no app (por exemplo, `#1234`).
+
+```bash
+curl -X POST https://chat.chatclean.com.br/api/v1/accounts/3/conversations/1234/messages \
+  -H "Authorization: Bearer SEU_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "content": "Olá! Seu pedido saiu para entrega.",
+    "message_type": "outgoing"
+  }'
+```
+
+Para registrar uma nota que só a equipe vê, envie `"private": true`.
+
+## Começar uma conversa nova
+
+<Steps>
+  <Step title="Crie ou encontre o contato">
+    Crie o contato informando o canal em que ele vai conversar:
+
+    ```bash
+    curl -X POST https://chat.chatclean.com.br/api/v1/accounts/3/contacts \
+      -H "Authorization: Bearer SEU_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "inbox_id": 7,
+        "name": "Maria Souza",
+        "phone_number": "+5584999990000"
+      }'
+    ```
+
+    A resposta traz o contato e, em `contact_inboxes`, o `source_id` dele nesse canal. Se o contato já existe, busque-o em `GET /api/v1/accounts/3/contacts/search?q=+5584999990000`.
+  </Step>
+  <Step title="Abra a conversa com a primeira mensagem">
+    ```bash
+    curl -X POST https://chat.chatclean.com.br/api/v1/accounts/3/conversations \
+      -H "Authorization: Bearer SEU_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "source_id": "SOURCE_ID_DO_CONTATO",
+        "inbox_id": 7,
+        "contact_id": 42,
+        "message": { "content": "Olá, Maria! Aqui é a equipe da loja." }
+      }'
+    ```
+
+    Você também pode mandar `assignee_id` (atendente) e `team_id` (time) para a conversa já nascer atribuída.
+  </Step>
+</Steps>
+
+## WhatsApp fora da janela de 24 horas
+
+No WhatsApp, a empresa só envia texto livre até 24 horas depois da última mensagem do cliente. Fora dessa janela, a primeira mensagem precisa ser um modelo aprovado pela Meta (veja [Modelos do WhatsApp](/configuracoes/modelos-whatsapp)). Envie o modelo em `template_params`:
+
+```json
+{
+  "source_id": "SOURCE_ID_DO_CONTATO",
+  "inbox_id": 7,
+  "contact_id": 42,
+  "message": {
+    "content": "Olá, Maria! Seu pedido 1020 está pronto para retirada.",
+    "template_params": {
+      "name": "pedido_pronto",
+      "category": "UTILITY",
+      "language": "pt_BR",
+      "processed_params": { "1": "Maria", "2": "1020" }
+    }
+  }
+}
+```
+
+`processed_params` preenche as variáveis do modelo, na ordem em que aparecem (`{{1}}`, `{{2}}`…). A Meta cobra cada modelo enviado conforme a categoria: no Brasil, R$ 0,33 por mensagem de Marketing e R$ 0,04 por mensagem de Utilidade.
+
+<Note>
+  A conversa nova por API funciona nos canais de chat do site, SMS, API, e-mail e WhatsApp. No Instagram e no Facebook, a conversa só começa quando o cliente escreve primeiro.
+</Note>

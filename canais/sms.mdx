@@ -1,0 +1,49 @@
+---
+title: SMS
+description: "Conecte um número de SMS da Twilio ou da Bandwidth e atenda os SMS como conversas."
+icon: "message-sms"
+---
+
+O canal SMS recebe e envia SMS por um número contratado na Twilio ou na Bandwidth. Você precisa ter a conta e o número no provedor antes de conectar.
+
+## Conectar o número
+
+Em **Canais**, clique em **Adicionar canal** e escolha **SMS**. Em **Provedor de API**, escolha **Twilio** ou **Bandwidth**.
+
+<Tabs>
+  <Tab title="Twilio">
+    1. Em **Nome da Caixa de Entrada**, dê um nome ao canal.
+    2. Informe o **Número de Telefone** que envia os SMS, no formato internacional com `+` e sem espaços (por exemplo `+5584999990000`). Se você usa um serviço de mensagens da Twilio, marque **Usar um Serviço de Mensagens do Twilio** e informe o **SID do Serviço de Mensagens** no lugar do número.
+    3. Informe o **SID da Conta** e o **Token de autenticação**, que ficam no console da Twilio. Para usar uma chave de API em vez do token, marque **Usar autenticação de chave API** e informe a **Chave da API SID** e o **Segredo da Chave API**.
+    4. Clique em **Criar canal Twilio** e adicione os agentes.
+
+    O ChatClean configura os webhooks da Twilio automaticamente. Se os SMS recebidos não chegarem, cadastre na Twilio a **URL de Callback** mostrada na tela final e na aba **Configuração** do canal.
+  </Tab>
+  <Tab title="Bandwidth">
+    1. Em **Nome da Caixa de Entrada**, dê um nome ao canal.
+    2. Informe o **Número de telefone** que envia os SMS, no formato internacional com `+` e sem espaços.
+    3. Informe o **ID da Conta**, o **ID da aplicação**, a **Chave API** e a **Chave secreta API** da sua conta na Bandwidth.
+    4. Clique em **Criar canal Bandwidth** e adicione os agentes.
+    5. Na tela final, copie a **URL de Callback** e cadastre-a como URL de callback de mensagens na Bandwidth.
+  </Tab>
+</Tabs>
+
+## Testar
+
+Num canal da Twilio, a tela final mostra um código QR. Escaneie com o celular para abrir o envio de SMS para o número e mandar uma mensagem de teste.
+
+## Saúde da conta (Twilio)
+
+Nos canais SMS da Twilio, a aba **Saúde da conta** confere a conta, o remetente e os webhooks:
+
+- **Conta do Twilio**, **Status da conta** e **Tipo de conta**. Contas em **Período de teste** só enviam para números verificados na Twilio.
+- **Remetente** e **Recursos do número**.
+- **Webhooks**: compara a URL configurada na Twilio com a esperada. Clique em **Registrar webhooks** para registrar de novo.
+
+O botão **Acessar o Console do Twilio** abre a conta na Twilio.
+
+## Campanhas de SMS
+
+Para enviar um SMS a um grupo de contatos numa data marcada, crie uma [campanha de SMS](/campanhas/visao-geral).
+
+As demais configurações (agentes, horário de funcionamento, saudação, CSAT, roteamento de conversa) são as mesmas dos outros canais. Veja [Canais](/canais/visao-geral).

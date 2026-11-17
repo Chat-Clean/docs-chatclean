@@ -1,0 +1,93 @@
+---
+title: Chat do site
+description: "Crie o chat ao vivo (widget) do seu site, instale o script e ajuste aparência, formulário pré-chat e segurança."
+icon: "globe"
+---
+
+O canal Site cria um chat ao vivo (widget) para o seu site. O visitante clica na bolha do chat, escreve, e a conversa chega em **Atendimentos → Conversas**.
+
+## Criar o chat do site
+
+<Steps>
+  <Step title="Escolha o Site">
+    Em **Canais**, clique em **Adicionar canal** e escolha **Site**.
+  </Step>
+  <Step title="Preencha os dados">
+    - **Nome do site**: o nome que aparece no topo do chat.
+    - **Domínio do website**: o endereço do seu site, por exemplo `suaempresa.com.br`.
+    - **Cor do Widget**: a cor da bolha e do cabeçalho do chat.
+    - **Seja bem-vindo** e **Bem-vindo, saudação**: o título e o texto da tela inicial do chat.
+    - **Ativar saudação do canal** e **Mensagem de saudação do canal**: a mensagem automática enviada quando o visitante começa uma conversa.
+  </Step>
+  <Step title="Crie o canal">
+    Clique em **Criar caixa de entrada**. Depois, escolha os agentes e clique em **Adicionar agentes**.
+  </Step>
+  <Step title="Copie o script">
+    A tela final mostra o código do chat. Copie o código.
+  </Step>
+</Steps>
+
+## Instalar no site
+
+Cole o código copiado em todas as páginas em que o chat deve aparecer, dentro da tag `<body>` do HTML, de preferência logo antes de `</body>`. Em plataformas de site (WordPress, lojas virtuais e similares), use o campo de scripts personalizados do rodapé.
+
+Para pegar o código de novo, abra as configurações do canal. Na aba **Configurações**, a prévia do chat tem as opções **Pré-visualizar** e **Script**. Clique em **Script** e copie.
+
+## Aparência e recursos
+
+Na aba **Configurações**, a seção **Recursos do widget** reúne a aparência do chat:
+
+| Campo | O que faz |
+| --- | --- |
+| **Seja bem-vindo** | Título da tela inicial. |
+| **Bem-vindo, saudação** | Texto abaixo do título. |
+| **Cor do Widget** | Cor da bolha e do cabeçalho. |
+| **Bolha** | **Posição** (**Esquerda** ou **Direita**) e **Tipo** (**Padrão** ou **Balão Expandido**). |
+| **Título do Iniciador** | Texto do balão expandido, por exemplo "Fale conosco no chat". |
+| **Definir o Tempo de Resposta** | Prazo exibido no chat: **Em alguns minutos**, **Em algumas horas** ou **Em um dia**. |
+| **Funcionalidades** | Mostrar o seletor de arquivos e o de emoji, permitir que o visitante encerre a conversa e usar o nome e o avatar do canal nas mensagens do robô. |
+
+A prévia ao lado mostra as mudanças antes de salvar. Clique em **Atualizar** para salvar.
+
+<Warning>
+  A posição, o tipo da bolha e o título do iniciador vão dentro do script. Depois de mudar esses campos, copie o script de novo em **Script** e troque o código que está no site.
+</Warning>
+
+## Preferências do canal
+
+Em **Preferências do Canal**, na mesma aba:
+
+- **Ativar saudação do canal**: envia a mensagem de saudação na primeira mensagem do visitante.
+- **Ativar caixa de coleta de e-mail**: pede o e-mail do visitante numa conversa nova, quando o contato ainda não tem e-mail.
+- **Permitir mensagens após a resolução da conversa**: deixa o visitante continuar escrevendo depois que a conversa foi resolvida.
+- **Habilitar continuidade das conversas por e-mail**: a conversa continua por e-mail quando o contato tem e-mail cadastrado.
+
+## Formulário pré-chat
+
+Na aba **Formulário Chat Pré**, você pede dados ao visitante antes de ele começar a conversa.
+
+<Steps>
+  <Step title="Ative o formulário">
+    Ative **Ativar formulário de bate-papo antes** e escreva a mensagem que aparece junto com o formulário.
+  </Step>
+  <Step title="Escolha os campos">
+    Em **Campos do formulário Pré Chat**, marque os campos que entram no formulário: e-mail, nome, telefone e os atributos personalizados da conta. Para cada campo, defina se é **Obrigatório**, o **Nome do campo** e o **Valor de exemplo**. Arraste as linhas para mudar a ordem.
+  </Step>
+  <Step title="Salve">
+    Clique em **Atualizar configurações do Formulário Pre Chat**.
+  </Step>
+</Steps>
+
+Os atributos personalizados são criados em [Atributos personalizados](/configuracoes/atributos-personalizados).
+
+## Segurança
+
+Na aba **Configuração**:
+
+- **Domínios permitidos**: os sites que podem carregar o chat, separados por vírgula (por exemplo `suaempresa.com.br, www.suaempresa.com.br`). Em branco, qualquer site pode carregar o chat.
+- **Ativar widget em aplicativos móveis**: ligue se o chat roda dentro de um aplicativo iOS ou Android. Aplicativos não informam o domínio e seriam bloqueados pelos domínios permitidos.
+- **Validação de identidade**: para sites com login, o seu servidor assina o identificador do usuário com a **Chave secreta** (HMAC SHA256) e envia o `identifier_hash` ao chat. Isso impede que alguém se passe por outro usuário. Ligue **Exigir validação de identidade para todas as conversas** para recusar conversas sem token válido. O botão **Rotacionar chave** troca a chave na hora, sem período de transição.
+
+## Campanhas no chat do site
+
+Para mostrar uma mensagem automática a quem visita uma página específica, crie uma [campanha de chat ao vivo](/campanhas/visao-geral).

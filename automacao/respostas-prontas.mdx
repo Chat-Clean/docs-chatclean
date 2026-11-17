@@ -1,0 +1,65 @@
+---
+title: "Respostas Prontas"
+description: "Salve mensagens que você usa sempre e insira na conversa digitando / e o atalho."
+icon: "comment-dots"
+---
+
+Respostas prontas são mensagens salvas para responder mais rápido. Cada uma tem um **Atalho** e uma **Mensagem**. Na conversa, você digita `/` seguido do atalho e a mensagem entra no campo de resposta.
+
+As respostas prontas ficam em **Configurações → Respostas Prontas**. Administradores e agentes podem criar, editar e excluir, e todas valem para a conta inteira.
+
+## Criar uma resposta pronta
+
+<Steps>
+  <Step title="Adicionar">
+    Em **Configurações → Respostas Prontas**, clique em **Adicionar resposta pronta**.
+  </Step>
+  <Step title="Atalho">
+    Preencha o **Atalho**, a palavra que você vai digitar depois da `/`. Exemplo: `boasvindas`.
+  </Step>
+  <Step title="Mensagem">
+    Escreva a **Mensagem** que vai ser inserida.
+  </Step>
+  <Step title="Salvar">
+    Clique em **Enviar**.
+  </Step>
+</Steps>
+
+## Variáveis
+
+Na **Mensagem**, digite `{{` para abrir a lista de variáveis. Quando você insere a resposta numa conversa, cada variável é trocada pelo dado daquela conversa:
+
+| Variável | Vira |
+| --- | --- |
+| `{{contact.name}}` | Nome do contato |
+| `{{contact.first_name}}` | Primeiro nome do contato |
+| `{{contact.email}}` | E-mail do contato |
+| `{{contact.phone}}` | Telefone do contato |
+| `{{agent.name}}` | Nome do agente que está respondendo |
+| `{{agent.first_name}}` | Primeiro nome do agente que está respondendo |
+| `{{inbox.name}}` | Nome da caixa de entrada |
+| `{{conversation.id}}` | Número da conversa |
+
+A lista também traz os [atributos personalizados](/configuracoes/atributos-personalizados) de contato e de conversa.
+
+Exemplo: `Olá, {{contact.first_name}}! Aqui é {{agent.first_name}}, como posso ajudar?`
+
+## Usar na conversa
+
+<Steps>
+  <Step title="Digite a barra">
+    No campo de resposta da conversa, digite `/`. Aparece a lista de respostas prontas.
+  </Step>
+  <Step title="Filtre pelo atalho">
+    Continue digitando o atalho para filtrar a lista, por exemplo `/boas`.
+  </Step>
+  <Step title="Escolha">
+    Selecione a resposta. A mensagem entra no campo, e você pode editar antes de enviar.
+  </Step>
+</Steps>
+
+Veja mais sobre o campo de resposta em [Responder](/atendimento/responder).
+
+## Gerenciar
+
+A lista mostra o **Atalho** e o **Conteúdo** de cada resposta. Use a busca para achar uma resposta, **Alterar** para editar e **Excluir** para apagar.

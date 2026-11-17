@@ -1,0 +1,75 @@
+---
+title: E-mail
+description: "Conecte uma caixa de e-mail do Gmail, do Outlook ou de outro provedor e atenda os e-mails como conversas."
+icon: "envelope"
+---
+
+O canal E-mail transforma cada e-mail recebido numa conversa no ChatClean. As respostas da equipe saem como e-mail para o contato, e a troca de mensagens fica na mesma conversa.
+
+## Conectar a caixa de e-mail
+
+Em **Canais**, clique em **Adicionar canal** e escolha **E-mail**. Na tela **Selecione seu provedor de e-mail**, escolha uma das opções exibidas.
+
+<Tabs>
+  <Tab title="Google">
+    1. Clique em **Google** e depois em **Entrar com o Google**.
+    2. Entre com a conta do Gmail ou do Google Workspace e aceite as permissões pedidas.
+    3. De volta ao ChatClean, termine a criação do canal e adicione os agentes.
+  </Tab>
+  <Tab title="Microsoft">
+    1. Clique em **Microsoft** e depois em **Entre com uma conta Microsoft**.
+    2. Entre com a conta do Outlook ou do Microsoft 365 e aceite as permissões pedidas.
+    3. De volta ao ChatClean, termine a criação do canal e adicione os agentes.
+  </Tab>
+  <Tab title="Outros provedores">
+    1. Clique em **Outros Provedores**.
+    2. Preencha **Nome do Canal** e **E-mail** (o endereço para onde os clientes escrevem).
+    3. Clique em **Criar canal de e-mail** e adicione os agentes.
+    4. Na tela final, siga a orientação mostrada: encaminhe os e-mails para o endereço indicado em **Encaminhar e-mails para este endereço:** ou configure o IMAP e o SMTP (veja abaixo).
+  </Tab>
+</Tabs>
+
+<Note>
+  As opções Google e Microsoft só aparecem quando estão disponíveis na plataforma. Se elas não aparecerem, use **Outros Provedores**.
+</Note>
+
+## IMAP e SMTP (outros provedores)
+
+Num canal criado por **Outros Provedores**, a aba **Configuração** reúne o encaminhamento, o recebimento e o envio.
+
+**Encaminhar para o E-mail** mostra o endereço para onde você encaminha os e-mails da sua caixa, quando o encaminhamento está disponível.
+
+**IMAP** recebe os e-mails direto da sua caixa. Deixe desativado se você usa o encaminhamento.
+
+1. Ative **Habilitar a configuração IMAP para esta caixa de entrada**.
+2. Preencha **Endereço** (por exemplo `imap.gmail.com`), **Porta**, **Entrar** (o usuário) e **Senha**.
+3. Marque **Habilitar o SSL** se o servidor pede e escolha a **Autenticação**.
+4. Clique em **Atualizar configurações do IMAP**.
+
+**SMTP** envia as respostas pela sua caixa de e-mail.
+
+1. Ative **Ativar a configuração SMTP para esta caixa de entrada**.
+2. Preencha **Endereço** (por exemplo `smtp.gmail.com`), **Porta**, **Entrar**, **Senha** e **Domínio**.
+3. Escolha a **Criptografia** (**SSL/TLS** ou **STARTTLS**), o **Abrir modo de verificação SSL** e a **Autenticação**.
+4. Clique em **Atualizar configurações de SMTP**.
+
+<Warning>
+  Se a tela final não mostrar um endereço de encaminhamento, configure o IMAP e o SMTP. Sem essas configurações, nenhum e-mail é processado.
+</Warning>
+
+Use os dados de servidor, porta e senha fornecidos pelo seu provedor de e-mail.
+
+## Nome do remetente
+
+Na aba **Configurações**, **Nome do remetente** define o nome que o cliente vê nos e-mails da equipe:
+
+- **Amigável**: o nome do agente que respondeu junto com o nome da empresa.
+- **Profissional**: só o nome da empresa.
+
+Clique em **Configure o nome da sua empresa** para informar o nome da empresa e depois em **Salvar**.
+
+As demais configurações (agentes, horário de funcionamento, CSAT) são as mesmas dos outros canais. Veja [Canais](/canais/visao-geral).
+
+## Reconectar Google ou Microsoft
+
+Se a autorização da conta Google ou Microsoft expirar, o canal mostra um aviso de reconexão. Clique em **Clique aqui para reconectar.** e entre na conta de novo.

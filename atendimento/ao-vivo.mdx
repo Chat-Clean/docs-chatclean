@@ -1,0 +1,146 @@
+---
+title: "Ao vivo"
+description: "Acompanhe em tempo real a fila e as conversas de cada atendente, veja quem está esperando demais e redistribua conversas."
+icon: "tower-broadcast"
+---
+
+**Ao vivo** mostra o atendimento acontecendo agora: quantas conversas estão na fila, quantas estão com cada atendente e há quanto tempo cada cliente espera. Abra pelo menu lateral, em **Atendimentos → Ao vivo**.
+
+<Note>
+  O **Ao vivo** só aparece para administradores.
+</Note>
+
+## O que entra no Ao vivo
+
+O Ao vivo mostra as conversas em atendimento por pessoas:
+
+- as conversas abertas atribuídas a um atendente;
+- as conversas sem atendente, que formam a fila (**Pendentes**).
+
+Conversas que estão com um robô ficam de fora. Conversas adiadas e resolvidas também não aparecem.
+
+A tela se atualiza sozinha quando chegam mensagens, quando uma conversa muda de atendente ou de status. O botão de atualizar (**Atualizar agora**) força uma nova leitura.
+
+## O topo
+
+O topo reúne tudo o que muda o que você vê:
+
+| Item | O que faz |
+| --- | --- |
+| Número ao lado do título | Total de conversas em atendimento agora: pendentes mais atribuídas. |
+| Busca | **Buscar por nome, telefone, ticket ou atendente**. Para o ticket, digite o número da conversa, com ou sem **#**. |
+| **Departamentos** | Filtra pelos times das conversas. |
+| **Canais** | Filtra pelos canais. |
+| **Etiquetas** | Filtra pelas etiquetas das conversas. |
+| **Usuários** | Escolhe quais atendentes aparecem. |
+| **Atendentes** / **Quadro** | Troca a visualização. |
+| Atualizar | Lê os dados de novo. |
+| **Tela cheia** | Mostra só o Ao vivo, sem o menu lateral, em tela cheia. **Sair da tela cheia** (ou <kbd>Esc</kbd>) volta ao normal. |
+| **Alertas de espera** | Define os limites de espera. Veja [Alertas de espera](#alertas-de-espera). |
+
+Cada filtro abre uma lista com busca e caixas de seleção, e mostra entre parênteses quantos itens estão marcados. Dá para marcar vários itens no mesmo filtro.
+
+## Visualização Atendentes
+
+**Atendentes** mostra um cartão para a fila e um cartão para cada atendente da conta. Com 2 atendentes ou mais, a tela mostra 3 cartões por linha.
+
+Acima dos cartões aparecem duas médias: **Espera média para atribuir** (quanto as conversas da fila esperam por um atendente) e **Espera média por resposta** (quanto os clientes das conversas atribuídas esperam por uma resposta).
+
+- O cartão **Pendentes** reúne as conversas sem atendente.
+- O cartão de cada atendente mostra a foto, o nome, a disponibilidade (**Online**, **Ocupado** ou **Offline**) e quantas conversas ele tem.
+
+Cada cartão lista até 30 conversas, da atividade mais recente para a mais antiga. **Carregar mais** traz as próximas. Um cartão sem conversas mostra "Nenhuma conversa no momento".
+
+### Cada conversa
+
+Cada conversa mostra:
+
+- a foto do contato, com o ícone do canal;
+- o nome do contato e a hora da última atividade (ou o dia, se foi antes de hoje);
+- a prévia da última mensagem e o número do ticket (**#1234**);
+- o time (departamento) e as etiquetas da conversa;
+- a quantidade de mensagens não lidas;
+- o tempo de espera, com uma ampulheta;
+- o estado da janela de 24 horas, nas conversas de WhatsApp.
+
+O tempo de espera conta coisas diferentes conforme o cartão:
+
+| Onde | O que conta |
+| --- | --- |
+| **Pendentes** | Há quanto tempo a conversa espera um atendente. |
+| Cartão do atendente | Há quanto tempo o cliente espera resposta. Some quando o atendente responde. |
+
+Passe o mouse sobre o tempo para ver o texto completo, como "Cliente esperando resposta há 12m".
+
+## Visualização Quadro
+
+**Quadro** organiza o atendimento como uma fila de chamada e permite redistribuir conversas arrastando.
+
+### Indicadores
+
+No topo do quadro ficam os indicadores. Passe o mouse sobre cada um para ver a explicação.
+
+| Indicador | O que conta |
+| --- | --- |
+| **Acima da meta** | Conversas esperando mais que o limite de atribuição ou de resposta definido em **Alertas de espera**. |
+| **Na fila** | Conversas abertas sem atendente. |
+| **Janela fechando** | Conversas do WhatsApp cuja janela de 24 horas fecha na próxima hora. |
+| **Cliente esperando** | Conversas atribuídas em que a última mensagem do cliente ainda não teve resposta. |
+| **Respondida** | Conversas atribuídas em que o atendente respondeu por último. |
+
+À direita aparecem a **maior espera** atual e quantos atendentes estão online e offline entre os exibidos.
+
+### Fila, atendentes livres e colunas
+
+- **Na fila** lista as conversas sem atendente, de quem espera há mais tempo para quem espera há menos. Quando a fila toda está carregada, cada conversa mostra a posição (**1º**, **2º**...).
+- A faixa de atendentes livres mostra quem está **Online** e sem nenhuma conversa ("2 livres para receber"). Quando não há ninguém, aparece "Nenhum atendente online sem conversas".
+- Ao lado vem uma coluna para cada atendente que tem conversas.
+
+### Atribuir arrastando
+
+<Steps>
+  <Step title="Arraste a conversa">
+    Pegue uma conversa da fila ou da coluna de um atendente.
+  </Step>
+  <Step title="Solte no atendente">
+    Solte sobre um atendente da faixa de livres ou sobre a coluna de outro atendente. O destino fica destacado enquanto você arrasta.
+  </Step>
+</Steps>
+
+A conversa passa para esse atendente na hora. Se a atribuição falhar, aparece "Não foi possível atribuir a conversa. Tente de novo."
+
+## Abrir uma conversa
+
+Clique numa conversa, em qualquer visualização, para abrir o painel lateral com o número do ticket. O painel mostra a conversa completa, com o editor para responder, e as **Ações da conversa** (agente, time, prioridade e etiquetas). Feche com **Fechar** ou <kbd>Esc</kbd>. Veja [Atender uma conversa](/atendimento/responder).
+
+## Alertas de espera
+
+Os alertas marcam em vermelho as conversas que esperam demais.
+
+1. Clique no sino (**Alertas de espera**) no topo.
+2. Preencha **Limite para atribuir (segundos)**: quanto uma conversa pode esperar na fila por um atendente.
+3. Preencha **Limite para responder (segundos)**: quanto um cliente pode esperar resposta numa conversa atribuída.
+4. Clique em **Salvar**.
+
+Os limites valem para a conta toda, para todos os administradores. Deixe um limite vazio para desligar aquele alerta.
+
+Quando uma conversa passa do limite:
+
+- o tempo de espera fica vermelho;
+- em **Atendentes**, a borda da conversa e a do cartão ficam vermelhas e o cartão mostra "Limite de espera ultrapassado";
+- em **Quadro**, a conversa ganha uma faixa vermelha à esquerda e entra no indicador **Acima da meta**.
+
+<Note>
+  Os limites usam tempo corrido, inclusive fora do horário de atendimento.
+</Note>
+
+## Janela de 24 horas do WhatsApp
+
+Nas conversas de WhatsApp, o Ao vivo avisa quando a janela de atendimento está para fechar. A janela fecha 24 horas depois da última mensagem do contato.
+
+| Aviso | Significado |
+| --- | --- |
+| **Janela fecha em...** (amarelo) | Falta 1 hora ou menos para a janela fechar. |
+| **Fora da janela de tempo** (vermelho) | A janela já fechou: só dá para enviar um modelo aprovado. |
+
+Veja [Modelos do WhatsApp](/configuracoes/modelos-whatsapp).

@@ -1,0 +1,98 @@
+---
+title: WhatsApp
+description: "Conecte o número do WhatsApp Business da sua empresa pela API oficial da Meta, com o cadastro incorporado."
+icon: "whatsapp"
+---
+
+O ChatClean usa a API oficial do WhatsApp Business (Cloud API) da Meta. A conexão é feita pelo cadastro incorporado da Meta: você entra com a sua conta, usa o portfólio empresarial (Business Manager) da sua empresa e o seu próprio número. Não há configuração manual de webhook.
+
+## Antes de começar
+
+- Tenha acesso de administrador ao portfólio empresarial da sua empresa na Meta. Isso deixa o cadastro mais simples e rápido.
+- Separe o número que vai atender. Pode ser um número novo ou um número que já usa o aplicativo WhatsApp Business.
+- Use um navegador sem bloqueador de anúncios na página do ChatClean. O bloqueador pode impedir que a janela da Meta abra.
+
+## Conectar o número
+
+<Steps>
+  <Step title="Escolha o WhatsApp">
+    Em **Canais**, clique em **Adicionar canal** e escolha **WhatsApp**.
+  </Step>
+  <Step title="Escolha o provedor">
+    Em **Selecione seu provedor de API**, clique em **Cloud do WhatsApp** (Configuração rápida via Meta).
+  </Step>
+  <Step title="Abra o cadastro da Meta">
+    Na tela **Configuração rápida com a Meta**, clique em **Conecte-se com WhatsApp Business**. A janela da Meta abre.
+  </Step>
+  <Step title="Conclua na janela da Meta">
+    Entre com a sua conta, escolha o portfólio empresarial da sua empresa e o número do WhatsApp, e siga os passos até o fim. Enquanto isso, o ChatClean mostra "Por favor, complete a configuração do negócio na janela da Meta...".
+  </Step>
+  <Step title="Adicione os agentes">
+    O ChatClean configura o número e abre a etapa **Agentes**. Escolha quem vai atender e clique em **Adicionar agentes**.
+  </Step>
+  <Step title="Teste">
+    A tela final mostra um código QR. Escaneie com o celular para mandar uma mensagem de teste ao número.
+  </Step>
+</Steps>
+
+<Note>
+  Se você fechar a janela da Meta antes de terminar, o ChatClean avisa "O cadastro do WhatsApp foi cancelado". É só clicar em **Conecte-se com WhatsApp Business** de novo.
+</Note>
+
+## Cobrança das mensagens
+
+A forma de pagamento das mensagens do WhatsApp é cadastrada por você, na Meta, no portfólio empresarial da sua empresa. A Meta cobra os modelos de mensagem enviados direto da sua empresa.
+
+Valores de referência da Meta no Brasil, por mensagem:
+
+| Categoria do modelo | Valor |
+| --- | --- |
+| Marketing | R$ 0,33 |
+| Utilidade | R$ 0,04 |
+
+## Janela de 24 horas e modelos
+
+O WhatsApp só permite mensagem livre até 24 horas depois da última mensagem do contato. Passado esse prazo, a caixa de resposta avisa "Você só pode responder usando uma mensagem de modelo devido à restrição da janela de 24 horas".
+
+Para falar com o contato fora da janela, ou para começar uma conversa, envie um modelo de mensagem aprovado pela Meta. Os modelos ficam em **Configurações → Modelos**. Veja [Modelos do WhatsApp](/configuracoes/modelos-whatsapp).
+
+Para enviar um modelo a muitos contatos de uma vez, use uma [campanha do WhatsApp](/campanhas/visao-geral).
+
+## Configurações do canal
+
+Além das abas comuns a todos os canais (veja [Canais](/canais/visao-geral)), o WhatsApp tem:
+
+### Configuração
+
+- **Token de verificação Webhook**: o token que valida o webhook do número.
+- **Inscrição incorporada do WhatsApp** → **Reconfigurar**: refaz o cadastro na Meta para atualizar as configurações do WhatsApp Business deste canal.
+- **Sincronizar Modelos**: busca na Meta os modelos de mensagem da conta. Use depois de criar ou editar um modelo. A atualização pode levar alguns minutos.
+
+### Saúde da conta
+
+Mostra a situação do número e da conta na Meta:
+
+- **Perfil comercial**: descrição, endereço, e-mail e sites do perfil do WhatsApp.
+- **Número de telefone**: número exibido, **Nome de exibição do WhatsApp** e **Status do nome de exibição**.
+- **Saúde e capacidade**: **Classificação de qualidade** (Verde, Amarelo ou Vermelho) e **Limite de mensagens comerciais**, o número de clientes únicos que a empresa pode contatar fora da janela de atendimento a cada 24 horas.
+- **Conta empresarial**: nome e ID da conta do WhatsApp Business e do portfólio comercial.
+
+O botão **Ir para o Meta Business Manager** abre a conta na Meta. Se o webhook não estiver configurado, a aba mostra **Cadastrar Webhook**.
+
+## Problemas comuns
+
+<AccordionGroup>
+  <Accordion title="O canal pede para reconectar">
+    Se a Meta deixar de validar a conexão, o canal mostra um aviso de reconexão. Clique em **Clique aqui para reconectar.** e refaça o cadastro na janela da Meta.
+  </Accordion>
+  <Accordion title="Registro não concluído">
+    O aviso "Seu registro no WhatsApp Business não foi concluído" indica que a Meta ainda não liberou o número. Confira o status do nome de exibição no Meta Business Manager e clique em **Concluir registro**.
+  </Accordion>
+  <Accordion title="O cadastro terminou sem número">
+    Se a mensagem for "A configuração da Meta foi concluída sem um número de telefone do WhatsApp que possa ser conectado", refaça o cadastro e adicione um número na janela da Meta.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  A tela do WhatsApp também oferece o provedor **Twilio** e um **fluxo de configuração manual**, para números que já estão na API do WhatsApp Business por outro aplicativo. Na maioria dos casos, use o cadastro incorporado descrito acima.
+</Tip>

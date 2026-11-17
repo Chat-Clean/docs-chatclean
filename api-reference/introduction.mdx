@@ -1,0 +1,70 @@
+---
+title: "Introdução"
+description: "Autentique com o seu token de acesso e chame a API REST do ChatClean: URL base, identificador da conta, tipos de token e erros."
+icon: "book-open"
+---
+
+A API REST do ChatClean permite que scripts e integrações façam o que você faz no app: criar e listar conversas, enviar mensagens, atribuir conversas, gerenciar contatos, etiquetas, times, canais, respostas prontas, automações e webhooks, e ler os relatórios de atendimento.
+
+## URL base
+
+```
+https://chat.chatclean.com.br
+```
+
+As rotas da conta começam em `/api/v1/accounts/{account_id}`. O `account_id` é o número que aparece no endereço do app depois de `/app/accounts/`. Por exemplo, em `https://chat.chatclean.com.br/app/accounts/3/dashboard`, o `account_id` é `3`.
+
+## Autenticação
+
+Toda requisição envia um token no cabeçalho `Authorization`, como token Bearer:
+
+```bash
+curl https://chat.chatclean.com.br/api/v1/accounts/3/conversations \
+  -H "Authorization: Bearer SEU_TOKEN" \
+  -H "Accept: application/json"
+```
+
+O cabeçalho antigo `api_access_token: SEU_TOKEN` continua aceito, mas use o Bearer em integrações novas.
+
+### Onde encontrar o token
+
+O token pessoal fica no seu perfil: clique no seu nome, no rodapé do menu lateral, escolha **Configurações do Perfil** e copie o **Token de acesso**. O botão **Reiniciar** gera um token novo e invalida o anterior. Veja [Perfil](/configuracoes/perfil).
+
+O token age com as suas permissões: um agente só enxerga, pela API, o que ele enxerga no app. Para integrações da empresa, prefira o token de um usuário administrador criado para isso.
+
+<Warning>
+  Trate o token como uma senha. Não o coloque em código que roda no navegador nem o envie para um repositório. Se ele vazar, clique em **Reiniciar** no perfil.
+</Warning>
+
+### Token de robô
+
+Robôs (veja [Robôs](/automacao/robos)) têm o próprio token. Ele só acessa as rotas permitidas para robôs, como responder e transferir conversas do canal ao qual o robô está ligado.
+
+## API do cliente
+
+As rotas que começam em `/public/api/v1/inboxes/{inbox_identifier}` formam a API do cliente. Elas não usam token de usuário: servem para um app ou site criar o contato e conversar com a sua empresa por um canal do tipo API. O `inbox_identifier` aparece nas configurações do canal. Veja [Canal API](/canais/api).
+
+## Erros
+
+| Código | Quando acontece |
+| --- | --- |
+| `401` | Token ausente, inválido ou reiniciado. |
+| `403` | O token não tem permissão para a rota (por exemplo, um agente tentando uma rota de administrador). |
+| `404` | O recurso não existe nesta conta, ou o token não enxerga esse recurso. |
+| `422` | Parâmetros inválidos. O corpo da resposta diz o que corrigir. |
+| `429` | Muitas requisições em pouco tempo. Espere e tente de novo. |
+
+## Próximos passos
+
+<Columns cols={2}>
+  <Card title="Enviar mensagens" icon="paper-plane" href="/api-reference/guides/enviar-mensagens">
+    Crie uma conversa e envie a primeira mensagem
+  </Card>
+  <Card title="Webhooks" icon="webhook" href="/api-reference/guides/webhooks">
+    Receba os eventos da conta na sua URL
+  </Card>
+</Columns>
+
+<Note>
+  As descrições dos endpoints, nas páginas geradas a seguir, ainda estão em inglês.
+</Note>

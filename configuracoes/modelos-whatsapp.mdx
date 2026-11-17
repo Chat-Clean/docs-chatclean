@@ -1,0 +1,64 @@
+---
+title: "Modelos do WhatsApp"
+description: "Veja os modelos de mensagem aprovados pela Meta nas suas caixas de entrada do WhatsApp, sincronize e entenda as categorias Marketing e Utilidade."
+icon: "file-lines"
+---
+
+Modelos (templates) são mensagens aprovadas pela Meta. No WhatsApp, você só pode mandar mensagem livre ao cliente dentro da janela de 24 horas depois da última mensagem dele. Fora dessa janela, a conversa só pode ser retomada com um modelo aprovado.
+
+A tela **Configurações → Modelos** mostra os modelos sincronizados de todas as suas caixas de entrada do WhatsApp. Só administradores acessam essa tela.
+
+<Note>
+  O ChatClean mostra os modelos, mas não cria nem edita modelos nessa tela. Para criar ou editar um modelo, use o gerenciador do seu provedor: a Meta, para números conectados pela API oficial do WhatsApp, ou o Twilio. Depois, sincronize.
+</Note>
+
+## A lista de modelos
+
+Cada linha mostra:
+
+- O nome do modelo.
+- O tipo de conteúdo: **Texto**, **Imagem**, **Vídeo**, **Documento**, **Mídia**, **Resposta rápida**, **Chamada para ação**, **Catálogo** ou **Copiar código**.
+- O idioma.
+- As caixas de entrada onde o modelo existe.
+
+Modelos que ainda não foram aprovados mostram o status ao lado do nome, com o nome em inglês que o provedor envia (por exemplo, **Pending** ou **Rejected**). Um modelo que ainda não foi enviado para análise mostra **Não enviado para aprovação do WhatsApp**. Modelos aprovados não mostram status na lista.
+
+Use a busca (**Pesquisar por conteúdo ou nome...**) e os filtros **Todas as caixas de entrada**, **Todos os idiomas** e **Todos os tipos** para encontrar um modelo.
+
+### Pré-visualizar
+
+Clique num modelo para abrir a **Pré-visualização do modelo**: ela mostra como a mensagem aparece no WhatsApp e, em **Detalhes do modelo**, o **Status**, o **Tipo de conteúdo**, a **Categoria**, o **Idioma** e as **Caixas de Entrada**.
+
+A pré-visualização também traz o atalho para o gerenciador do provedor: **Gerenciar na Meta** ou **Gerenciar no Twilio**.
+
+## Sincronizar
+
+Depois de criar ou alterar um modelo no provedor, clique em **Sincronizar modelos**. A sincronização roda para todas as caixas de entrada do WhatsApp e pode levar alguns minutos. O topo da tela mostra a **Última tentativa de sincronização**.
+
+## Categorias
+
+A Meta classifica cada modelo numa categoria. A categoria aparece na pré-visualização com o nome que a Meta usa, em inglês.
+
+| Categoria | Na pré-visualização | Para que serve |
+| --- | --- | --- |
+| Marketing | **Marketing** | Promoções, ofertas, novidades, convites e mensagens para reativar clientes. |
+| Utilidade | **Utility** | Mensagens sobre algo que o cliente já fez ou pediu, como confirmação de pedido, atualização de entrega ou lembrete de agendamento. |
+
+A Meta cobra por mensagem de modelo entregue, e o valor depende da categoria. Referência no Brasil:
+
+| Categoria | Valor por mensagem |
+| --- | --- |
+| Marketing | R$ 0,33 |
+| Utilidade | R$ 0,04 |
+
+<Warning>
+  A Meta pode reclassificar um modelo enviado como Utilidade para Marketing, de acordo com o texto. Os valores são definidos pela Meta e podem mudar.
+</Warning>
+
+## Onde os modelos são usados
+
+- **Na conversa**: fora da janela de 24 horas, o campo de resposta do WhatsApp só permite enviar um modelo. Escolha o modelo e preencha as **Variáveis** antes de enviar. Veja [Responder](/atendimento/responder).
+- **Campanhas de WhatsApp**: os disparos usam modelos aprovados. Veja [Campanhas](/campanhas/visao-geral).
+- **Pesquisa de satisfação**: no WhatsApp, o CSAT usa um modelo próprio. Veja [CSAT](/relatorios/atendimento#csat).
+
+Para conectar um número de WhatsApp, veja [WhatsApp](/canais/whatsapp).

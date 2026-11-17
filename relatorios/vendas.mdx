@@ -1,0 +1,74 @@
+---
+title: "Vendas & Pipeline"
+description: "Pipeline, receita, perdas e ritmo da equipe: indicadores, conversão entre etapas, ranking, origens, produtos, motivos e estagnação."
+icon: "chart-line"
+---
+
+**Vendas & Pipeline**, no grupo **Relatórios** do menu lateral, mostra o pipeline, a receita, as perdas e o ritmo da equipe no período.
+
+<Info>
+  Só administradores abrem os relatórios.
+</Info>
+
+## Período, comparação e filtros
+
+- **Período**: **7 dias**, **30 dias** (o padrão) ou **90 dias**, terminando hoje, no fuso horário do seu navegador.
+- **Período anterior**: compara com os mesmos dias logo antes. Os indicadores mostram a variação ("+12% vs. anterior") e o gráfico de ganhos ganha a linha do período anterior. O indicador **Ganho no período** mostra a variação sempre.
+- **Filtrar**: **Pipeline**, **Etapa**, **Responsável**, **Valor (R$)**, **Contato**, **Empresa**, **Título**, **Canal**, **Fechado em**, **Criado em** e **Entrou na etapa**. Os filtros valem para todo o relatório. **Canal** é a caixa de entrada da conversa que deu origem ao negócio. Ao trocar o filtro **Pipeline**, o filtro **Etapa** sai.
+
+Sem o filtro **Pipeline**, os indicadores e a maioria dos blocos somam todos os pipelines da conta. Os blocos de etapas (**Pipeline**, **Conversão entre etapas**, **Onde o negócio se perde** e **Estagnação por etapa**) usam o pipeline do filtro ou, sem filtro, o pipeline padrão.
+
+## Indicadores
+
+| Indicador | O que mostra |
+| --- | --- |
+| **Em aberto (pipeline)** | Valor dos negócios abertos agora e quantos estão parados (passaram do prazo da etapa). Não depende do período. |
+| **Ganho no período** | Valor dos negócios ganhos no período. |
+| **Perdido** | Valor e quantidade dos negócios perdidos no período. |
+| **Conversão** | Dos negócios encerrados no período, quantos foram ganhos ("8 de 10 encerrados"). |
+| **Ticket médio** | Valor médio por negócio ganho. |
+| **Tempo de fechamento** | Tempo médio da criação até o ganho. |
+| **Tempo até perder** | Tempo médio da criação até a perda. |
+
+## Blocos
+
+| Bloco | O que mostra |
+| --- | --- |
+| **Indicadores** | Os indicadores acima. |
+| **Pipeline** | Negócios abertos por etapa, com contagem e valor. Passe o mouse para ver a parte de cada etapa no total e em relação à primeira etapa. |
+| **Ganhos ao longo do tempo** | Valor ganho por dia; em 90 dias, por semana. Use **Ver como tabela** para ver os números. |
+| **Conversão entre etapas** | Dos negócios criados no período, quantos chegaram a cada etapa (**Chegaram**) e quantos seguiram para a próxima (**Seguiram para a próxima**). Etapa pulada não conta, então uma etapa pode ter mais negócios que a anterior. A etapa com a **maior queda** fica marcada. |
+| **Por responsável** | Ranking de vendas no período: **Negócios** criados, **Ganhos** e **Valor**. |
+| **Por origem** | Leads criados no período por origem, com **Ganhos**, **Perdidos**, **Conversão** e **Valor**. |
+| **Por canal** | O mesmo, por canal de entrada. |
+| **Por produto** | **Unidades** e **Receita** de cada produto nos negócios ganhos. |
+| **Distribuição de ganhos por origem** | A parte de cada origem no valor ganho. |
+| **Por empresa** | As 10 empresas que mais renderam no período (**Ganho no período**) e o que ainda está aberto com cada uma (**Em jogo**). |
+| **Ganhos por motivo** | O que fez cada negócio fechar: **Negócios**, **Participação** e **Valor** por motivo. |
+| **Negócios ganhos** | Cada venda do período, com **Responsável**, **Produtos**, **Valor**, quanto **Levou** e **Fechado em**. |
+| **Perdas por motivo** | Quantos negócios cada motivo de perda levou. |
+| **Perdas por responsável** | Quem mais perde, em proporção do que fechou: **Perdidos**, **Encerrados**, **Taxa de perda** e **Valor perdido**. |
+| **Onde o negócio se perde** | Em que etapa a venda morreu: **Perdidos**, **% das perdas** e **Valor perdido** por etapa. |
+| **Negócios perdidos** | Cada perda do período, com a etapa, o **Motivo** e a **Justificativa**. |
+| **Estagnação por etapa** | Por etapa: **Abertos**, **Parados** (que passaram do prazo da etapa) e **Média na etapa**. |
+| **Colaboradores** | Ganho contra perdido de cada responsável (**Ganhos**, **Valor ganho**, **Perdidos**, **Valor perdido**, **Taxa de ganho**) e as atividades: **Atividades feitas** no período e **Atrasadas** agora. |
+
+Detalhes:
+
+- Os blocos de motivos não contam os negócios sem motivo ou com **Não informar**.
+- **Negócios ganhos** e **Negócios perdidos** mostram os 100 mais recentes.
+- Os motivos de ganho e de perda vêm do momento em que o negócio é fechado. Veja [Ganhar ou perder](/vendas/negocios#ganhar-ou-perder).
+- O prazo de parado de cada etapa é o **Parado depois de (dias)** dela. Veja [Funil de vendas](/vendas/funil).
+
+## Organizar os blocos
+
+Em **Blocos**, escolha o que aparece e em que ordem:
+
+- Desmarque um bloco para escondê-lo. O botão mostra quantos estão ocultos, e **Mostrar todos** traz todos de volta.
+- Arraste os blocos para reordenar.
+
+A escolha é sua: cada pessoa vê os blocos na própria ordem.
+
+## Exportar
+
+**Baixar CSV** baixa o relatório do período e dos filtros atuais.

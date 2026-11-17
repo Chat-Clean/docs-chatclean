@@ -1,0 +1,168 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "ChatClean Docs",
+  "colors": {
+    "primary": "#007a2a",
+    "light": "#71d083",
+    "dark": "#007a2a"
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "favicon": "/logo/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentação",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Primeiros passos",
+            "pages": [
+              "index",
+              "getting-started/quickstart",
+              "getting-started/conceitos"
+            ]
+          },
+          {
+            "group": "Atendimentos",
+            "pages": [
+              "atendimento/conversas",
+              "atendimento/responder",
+              "atendimento/ao-vivo",
+              "atendimento/caixa-de-entrada",
+              "atendimento/contatos"
+            ]
+          },
+          {
+            "group": "Vendas",
+            "pages": [
+              "vendas/funil",
+              "vendas/negocios",
+              "vendas/entrada-de-leads",
+              "vendas/impulsos-e-campanhas",
+              "vendas/ia-do-pipeline",
+              "vendas/empresas",
+              "vendas/produtos"
+            ]
+          },
+          {
+            "group": "Campanhas",
+            "pages": [
+              "campanhas/visao-geral"
+            ]
+          },
+          {
+            "group": "Automação",
+            "pages": [
+              "automacao/regras",
+              "automacao/robos",
+              "automacao/macros",
+              "automacao/respostas-prontas"
+            ]
+          },
+          {
+            "group": "Relatórios",
+            "pages": [
+              "relatorios/visao-geral",
+              "relatorios/vendas",
+              "relatorios/atendimento"
+            ]
+          },
+          {
+            "group": "Canais",
+            "pages": [
+              "canais/visao-geral",
+              "canais/whatsapp",
+              "canais/instagram",
+              "canais/facebook",
+              "canais/site",
+              "canais/email",
+              "canais/telegram",
+              "canais/sms",
+              "canais/api"
+            ]
+          },
+          {
+            "group": "Configurações",
+            "pages": [
+              "configuracoes/conta",
+              "configuracoes/agentes",
+              "configuracoes/times",
+              "configuracoes/etiquetas",
+              "configuracoes/atributos-personalizados",
+              "configuracoes/modelos-whatsapp",
+              "configuracoes/integracoes",
+              "configuracoes/perfil"
+            ]
+          },
+          {
+            "group": "Suporte",
+            "pages": [
+              "support"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Referência da API",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Visão geral",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/guides/enviar-mensagens",
+              "api-reference/guides/webhooks"
+            ]
+          },
+          {
+            "group": "API da aplicação",
+            "openapi": "openapi.json"
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://docs.chatclean.com.br"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Suporte",
+        "href": "mailto:contato@chatclean.com.br"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Acessar o ChatClean",
+      "href": "https://chat.chatclean.com.br"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "website": "https://chatclean.com.br"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.chatclean.com.br"
+    }
+  }
+}

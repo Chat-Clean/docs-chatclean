@@ -1,0 +1,70 @@
+---
+title: Canal API
+description: "Crie um canal próprio para ligar o seu sistema ao ChatClean: mensagens entram pela API e saem pelo webhook."
+icon: "code"
+---
+
+O canal API serve para integrações próprias: um app, um site com chat próprio, um sistema interno ou outra plataforma de mensagens. O ChatClean não fala com nenhuma rede nesse canal. O seu sistema envia as mensagens dos clientes pela API, e o ChatClean avisa o seu sistema, por webhook, quando a equipe responde.
+
+## Criar o canal
+
+<Steps>
+  <Step title="Escolha a API">
+    Em **Canais**, clique em **Adicionar canal** e escolha **API**.
+  </Step>
+  <Step title="Preencha os dados">
+    - **Nome do Canal**: como o canal aparece para a equipe.
+    - **URL do Webhook**: o endereço do seu sistema que recebe os eventos do canal. Você pode deixar para depois.
+  </Step>
+  <Step title="Crie o canal">
+    Clique em **Criar canal de API** e adicione os agentes.
+  </Step>
+</Steps>
+
+## Dados do canal
+
+Nas configurações do canal ficam os dados que a integração usa.
+
+Na aba **Configurações**:
+
+- **URL do webhook**: troque o endereço que recebe os eventos e clique em **Atualizar**.
+- **Segredo do Webhook**: a chave que assina as chamadas do webhook. Use para conferir se a chamada veio do ChatClean. Dá para copiar e gerar um segredo novo.
+
+Na aba **Configuração**:
+
+- **Identificador da caixa de entrada**: o `inbox_identifier`, usado nas rotas da API do cliente.
+- **Validação de Identidade do Usuário**: a chave para gerar o `identifier_hash` (HMAC SHA256 do `identifier` do contato).
+- **Forçar validação de identidade do usuário**: com **Ativar** marcado, chamadas sem `identifier_hash` são recusadas.
+
+## Mensagens que entram
+
+O seu sistema registra as mensagens dos clientes de uma destas formas:
+
+- **API do cliente**: rotas em `/public/api/v1/inboxes/{inbox_identifier}`, que criam o contato, a conversa e as mensagens sem token de usuário. Servem para um app ou site conversar direto com a sua empresa.
+- **API da aplicação**: rotas autenticadas com o token de acesso, para o seu servidor criar contatos, conversas e mensagens no canal.
+
+Veja [Introdução à API](/api-reference/introduction) e [Enviar mensagens](/api-reference/guides/enviar-mensagens).
+
+## Webhook do canal
+
+Quando há uma **URL do Webhook**, o ChatClean envia um `POST` com JSON a cada evento das conversas do canal:
+
+| Evento | Quando é enviado |
+| --- | --- |
+| `conversation_created` | Uma conversa foi criada no canal. |
+| `conversation_status_changed` | O status de uma conversa mudou. |
+| `conversation_updated` | Uma conversa foi alterada. |
+| `message_created` | Uma mensagem foi criada, inclusive as respostas da equipe. |
+| `message_updated` | Uma mensagem foi alterada. |
+| `conversation_typing_on` | Alguém começou a digitar. |
+| `conversation_typing_off` | Alguém parou de digitar. |
+
+Para entregar as respostas da equipe ao cliente, trate o evento `message_created` das mensagens enviadas pela equipe.
+
+Cada chamada traz os cabeçalhos `X-Chatwoot-Delivery`, `X-Chatwoot-Timestamp` e `X-Chatwoot-Signature`, assinados com o **Segredo do Webhook**. A verificação é a mesma dos webhooks da conta: veja [Webhooks](/api-reference/guides/webhooks#verificar-a-assinatura).
+
+<Note>
+  O webhook do canal API recebe só os eventos desse canal. Para receber eventos de todos os canais, crie um webhook em **Configurações → Integrações**.
+</Note>
+
+As demais configurações (agentes, horário de funcionamento, saudação, CSAT, roteamento de conversa) são as mesmas dos outros canais. Veja [Canais](/canais/visao-geral).

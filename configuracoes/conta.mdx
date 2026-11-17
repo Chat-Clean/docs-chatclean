@@ -1,0 +1,41 @@
+---
+title: "Conta"
+description: "Altere o nome e o idioma da conta e encontre o ID da conta para integrações pela API."
+icon: "building"
+---
+
+A tela **Configurações → Conta** reúne os dados gerais da conta. Só administradores acessam essa tela.
+
+## Configurações gerais
+
+| Campo | O que é |
+| --- | --- |
+| **Nome da Conta** | O nome da sua empresa ou operação dentro do ChatClean. |
+| **Idioma do site** | O idioma padrão da conta. Cada pessoa pode escolher outro idioma no próprio [perfil](/configuracoes/perfil). |
+
+Depois de alterar, clique em **Atualizar configurações**.
+
+## ID da Conta
+
+O **ID da Conta** é o número que identifica a sua conta. Você precisa dele para montar integrações pela [API](/api-reference/introduction), porque os endereços da API levam esse número, por exemplo `https://chat.chatclean.com.br/api/v1/accounts/ID_DA_CONTA/conversations`.
+
+Para gerar o token que autentica essas chamadas, veja [Token de acesso](/configuracoes/perfil#token-de-acesso).
+
+## Outras configurações da conta
+
+Outras regras da conta ficam em telas próprias:
+
+<Columns cols={2}>
+  <Card title="Agentes" icon="users" href="/configuracoes/agentes">
+    Convide a equipe e defina quem é administrador.
+  </Card>
+  <Card title="Times" icon="people-group" href="/configuracoes/times">
+    Agrupe agentes e distribua conversas.
+  </Card>
+  <Card title="Canais" icon="tower-broadcast" href="/canais/visao-geral">
+    Conecte WhatsApp, Instagram, e-mail e outros canais.
+  </Card>
+  <Card title="Integrações" icon="plug" href="/configuracoes/integracoes">
+    Webhooks e aplicativos conectados.
+  </Card>
+</Columns>

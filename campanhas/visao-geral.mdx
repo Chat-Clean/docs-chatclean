@@ -1,0 +1,116 @@
+---
+title: Campanhas
+description: "Envie mensagens proativas: no chat do site para quem visita uma página, por SMS ou por modelo aprovado do WhatsApp para um público por etiqueta."
+icon: "bullhorn"
+---
+
+Campanhas são mensagens que a sua empresa envia primeiro, sem esperar o contato escrever. O menu **Campanhas** tem três tipos:
+
+| Tipo | Canal | Como funciona |
+| --- | --- | --- |
+| **Chat ao vivo** | [Chat do site](/canais/site) | Mostra uma mensagem no chat para quem fica um tempo numa página do seu site. Fica ativa até você desligar. |
+| **SMS** | [SMS](/canais/sms) | Envia um SMS para os contatos com as etiquetas escolhidas, na data e hora marcadas. |
+| **WhatsApp** | [WhatsApp](/canais/whatsapp) | Envia um modelo aprovado do WhatsApp para os contatos com as etiquetas escolhidas, na data e hora marcadas. |
+
+Só administradores criam e editam campanhas. As respostas dos contatos chegam como conversas normais em **Atendimentos → Conversas**.
+
+## Chat ao vivo
+
+<Steps>
+  <Step title="Abra as campanhas de chat ao vivo">
+    No menu lateral, abra **Campanhas → Chat ao vivo** e clique em **Criar campanha**.
+  </Step>
+  <Step title="Escreva a campanha">
+    Preencha o **Título** (só a equipe vê) e a **Mensagem** que aparece para o visitante.
+  </Step>
+  <Step title="Escolha o canal e o remetente">
+    Em **Selecionar caixa de entrada**, escolha o chat do site. Em **Enviado por**, escolha o agente que aparece como autor da mensagem, ou **Bot**.
+  </Step>
+  <Step title="Defina quando aparece">
+    - **URL:** a página do site em que a campanha aparece.
+    - **Tempo na página (segundos)**: quanto tempo o visitante fica na página antes de a mensagem aparecer.
+  </Step>
+  <Step title="Ajuste as preferências">
+    Em **Outras preferências**, marque **Ativar campanha** para deixar a campanha no ar e, se quiser, **Ativar somente durante o horário comercial**, que usa o horário de funcionamento do canal.
+  </Step>
+  <Step title="Salve">
+    Clique em **Criar**.
+  </Step>
+</Steps>
+
+Cada campanha aparece na lista como **Ativado** ou **Desativado**. Clique no botão de editar, no cartão da campanha, para mudar a mensagem, a página ou ligar e desligar a campanha.
+
+## SMS
+
+<Steps>
+  <Step title="Abra as campanhas de SMS">
+    No menu lateral, abra **Campanhas → SMS** e clique em **Criar campanha**.
+  </Step>
+  <Step title="Escreva a campanha">
+    Preencha o **Título** e a **Mensagem**.
+  </Step>
+  <Step title="Escolha o canal e o público">
+    Em **Selecionar caixa de entrada**, escolha o canal de SMS. Em **Público**, escolha uma ou mais etiquetas: recebem o SMS os contatos que têm qualquer uma delas.
+  </Step>
+  <Step title="Agende">
+    Em **Horário agendado**, escolha a data e a hora do envio e clique em **Criar**.
+  </Step>
+</Steps>
+
+A campanha aparece como **Agendada** até a hora do envio, **Processando** durante o envio e **Concluído** depois. Campanhas de SMS não podem ser editadas depois de criadas.
+
+## WhatsApp
+
+A campanha do WhatsApp envia um modelo de mensagem aprovado pela Meta. Fora da janela de 24 horas, o WhatsApp só aceita modelo, por isso a campanha não tem texto livre.
+
+### Antes de começar
+
+- Tenha um canal [WhatsApp](/canais/whatsapp) conectado pela API oficial.
+- Crie o modelo e espere a aprovação da Meta. Veja [Modelos do WhatsApp](/configuracoes/modelos-whatsapp). Se o modelo aprovado não aparecer, use **Sincronizar Modelos** na aba **Configuração** do canal.
+- Marque os contatos do público com uma etiqueta. Veja [Etiquetas](/configuracoes/etiquetas).
+
+### Criar a campanha
+
+<Steps>
+  <Step title="Abra as campanhas do WhatsApp">
+    No menu lateral, abra **Campanhas → WhatsApp** e clique em **Criar campanha**.
+  </Step>
+  <Step title="Configurações básicas">
+    Em **Configurações básicas**, preencha o **Título** e escolha a **Caixa de Entrada** do WhatsApp.
+  </Step>
+  <Step title="Público">
+    Em **Público**, escolha as **Etiquetas**. Recebem a campanha os contatos que têm qualquer uma delas. A tela mostra quantos contatos foram selecionados; clique em **Visualizar** para ver a lista. Contatos sem telefone ficam de fora.
+  </Step>
+  <Step title="Modelo">
+    Em **Modelo**, escolha um dos modelos aprovados do canal. Preencha o que o modelo pedir: a mídia ou o texto do **Cabeçalho**, as variáveis do **Corpo** e os parâmetros dos **Botões**.
+  </Step>
+  <Step title="Confira">
+    Ao lado, **Pré-visualização da mensagem** mostra como o modelo vai chegar, e **Informações da conta** mostra o **Nível de mensagens**, o **Status da conta** e a **Saúde da conta** do número.
+  </Step>
+  <Step title="Agende">
+    Clique em **Agendar campanha**, escolha a data e a hora do envio e clique em **Criar**.
+  </Step>
+</Steps>
+
+Nas variáveis do modelo, você pode usar dados de cada contato, como `{{contact.name}}`, `{{contact.first_name}}` ou `{{contact.phone_number}}`. Se a variável ficar vazia para um contato, esse contato não recebe a mensagem.
+
+<Warning>
+  O **Nível de mensagens** é o limite da Meta de clientes únicos que o número pode contatar fora da janela de atendimento a cada 24 horas. Esse limite vale para todos os números do mesmo portfólio empresarial. Confira o nível antes de agendar uma campanha grande.
+</Warning>
+
+### Editar e acompanhar
+
+Enquanto a campanha estiver **Agendada**, clique no botão de editar, no cartão da campanha. Mude o que precisar em cada seção e clique em **Salvar Alterações**, ou em **Descartar alterações**. Para mudar a data, escolha a nova data e clique em **Reagendar**. O canal da campanha não muda depois de criada. Campanhas em **Processando** ou **Concluído** não podem ser editadas.
+
+### Custo
+
+Cada mensagem da campanha é um modelo cobrado pela Meta direto da sua empresa, na forma de pagamento cadastrada no seu portfólio empresarial. Valores de referência da Meta no Brasil, por mensagem:
+
+| Categoria do modelo | Valor |
+| --- | --- |
+| Marketing | R$ 0,33 |
+| Utilidade | R$ 0,04 |
+
+## Excluir uma campanha
+
+Clique no botão de excluir (lixeira), no cartão da campanha, e confirme em **Excluir**. A exclusão é permanente. Numa campanha do WhatsApp, as mensagens já enviadas continuam no WhatsApp dos contatos.

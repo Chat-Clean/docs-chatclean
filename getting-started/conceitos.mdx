@@ -1,0 +1,94 @@
+---
+title: "Conceitos"
+description: "Os termos que aparecem em todo o ChatClean: conversa, contato, canal, agente, time, etiqueta, status e atribuição."
+icon: "book"
+---
+
+Esta página explica as peças básicas do atendimento no ChatClean. As outras páginas usam esses termos o tempo todo.
+
+## Contato
+
+Um **contato** é a pessoa ou empresa que fala com você. O ChatClean cria o contato na primeira mensagem que ela manda por qualquer canal, e você também pode cadastrar contatos à mão ou importar uma lista. Cada contato guarda nome, e-mail, telefone, empresa, etiquetas, notas e o histórico de conversas. Veja [Contatos](/atendimento/contatos).
+
+## Conversa
+
+Uma **conversa** é uma troca de mensagens entre um contato e a sua equipe, por um canal. Cada conversa tem um número (por exemplo, **#1234**), que aparece no topo da conversa e, no [Ao vivo](/atendimento/ao-vivo), como número do ticket.
+
+Um mesmo contato pode ter várias conversas ao longo do tempo. O painel do contato mostra as **Conversas anteriores** dele.
+
+## Canal
+
+Um **canal** é a porta de entrada das mensagens: um número de WhatsApp, uma conta do Instagram, uma página do Facebook, o chat do site, um e-mail e assim por diante. Cada conversa pertence a um canal. Os canais ficam em **Canais**, no menu lateral. Veja [Canais](/canais/visao-geral).
+
+<Note>
+  Em algumas telas o canal aparece com o nome **Caixa de Entrada**, como no filtro de conversas. Já o item **Caixa de Entrada** do menu **Atendimentos** é outra coisa: são as suas notificações. Veja [Caixa de Entrada](/atendimento/caixa-de-entrada).
+</Note>
+
+## Agente
+
+Um **agente** é uma pessoa da sua equipe que usa o ChatClean. Cada agente tem uma de duas funções:
+
+| Função | O que pode fazer |
+| --- | --- |
+| **Administrador** | Vê as conversas de todos os canais, acessa o **Ao vivo**, as configurações da conta, exclui conversas e contatos, importa e exporta contatos. |
+| **Agente** | Vê as conversas dos canais em que é membro e atende essas conversas. |
+
+Os agentes são cadastrados em **Configurações → Agentes**. Veja [Agentes](/configuracoes/agentes).
+
+### Disponibilidade
+
+Cada agente tem uma disponibilidade: **Online**, **Ocupado** ou **Offline**. Você muda a sua no menu do seu perfil, no rodapé do menu lateral. A atribuição automática só entrega conversas para quem está **Online**.
+
+## Time
+
+Um **time** é um grupo de agentes, como "Vendas" ou "Suporte". Uma conversa pode ser atribuída a um time e, ao mesmo tempo, a um agente desse time. No **Ao vivo**, os times aparecem como **Departamentos**. Veja [Times](/configuracoes/times).
+
+## Etiqueta
+
+Uma **etiqueta** é uma marca colorida que você coloca em conversas e em contatos para organizar e filtrar, por exemplo "orçamento" ou "cliente-vip". As etiquetas são criadas em **Configurações → Etiquetas**. As que têm **Exibir etiqueta na barra lateral** ligada aparecem no menu lateral, em **Atendimentos**. Veja [Etiquetas](/configuracoes/etiquetas).
+
+## Status da conversa
+
+Toda conversa tem um status:
+
+| Status | Significado |
+| --- | --- |
+| Aberta | A conversa está em atendimento por uma pessoa ou esperando alguém pegar. |
+| Pendente | A conversa está com um robô ou com a IA. Em canais com robô ativo, as conversas novas já começam pendentes. |
+| Adiada | A conversa saiu da frente até uma data. Ela volta a ficar aberta quando chega a hora escolhida ou quando o contato manda uma nova mensagem. |
+| Resolvida | O atendimento terminou. Se o contato escrever de novo, a conversa reabre sozinha (ou volta para pendente, se o canal tiver um robô ativo). |
+
+Na lista de [Conversas](/atendimento/conversas), cada aba mostra um recorte desses status:
+
+| Aba | O que mostra |
+| --- | --- |
+| **Meus** | Conversas abertas atribuídas a você. |
+| **Pendentes** | Conversas abertas sem atendente: a fila. |
+| **Com a IA** | Conversas com status pendente, atendidas pelo robô ou pela IA. |
+| **Adiadas** | As suas conversas adiadas. |
+| **Resolvidos** | As suas conversas resolvidas. |
+
+<Warning>
+  A aba **Pendentes** é a fila de conversas abertas sem atendente. As conversas com o status pendente ficam na aba **Com a IA**.
+</Warning>
+
+## Atribuição
+
+Atribuir é definir quem cuida da conversa. Cada conversa tem um **Agente atribuído** e um **Time atribuído**, e os dois podem ficar vazios.
+
+- **Manual:** no painel do contato, em **Ações da conversa**, escolha o agente e o time, ou clique em **Atribuir a mim**. Também dá para atribuir várias conversas de uma vez pela seleção múltipla, na [lista de conversas](/atendimento/conversas), ou arrastar conversas no [Ao vivo](/atendimento/ao-vivo).
+- **Automática:** com **Habilitar atribuição automática** ligada nas configurações do canal, o ChatClean distribui as conversas novas em rodízio entre os agentes do canal que estão **Online**. Quando uma conversa vai para um time com **Permitir atribuição automática para este time.** ligada, o ChatClean escolhe um membro desse time que esteja **Online**.
+
+Uma conversa sem agente atribuído aparece na aba **Pendentes** e no cartão **Pendentes** do Ao vivo.
+
+## Prioridade
+
+A **Prioridade** ajuda a decidir o que atender primeiro: **Nenhuma**, **Urgente**, **Alta**, **Média** ou **Baixa**. Você muda a prioridade no painel do contato ou no menu da conversa na lista, e pode ordenar a lista por ela.
+
+## Nota privada, menção e participantes
+
+- Uma **nota privada** (no editor, **Mensagem Privada**) é uma mensagem que só a equipe vê. O contato nunca recebe.
+- Numa nota privada, digite **@** para **mencionar** um agente ou um time. Quem é mencionado recebe uma notificação e vê a conversa na visão **Menções**.
+- **Participantes** são agentes que acompanham uma conversa sem estar atribuídos a ela. Quem participa recebe notificação das mensagens novas e vê a conversa na visão **Participantes**.
+
+Veja [Atender uma conversa](/atendimento/responder).

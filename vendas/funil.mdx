@@ -1,0 +1,173 @@
+---
+title: "Funil de vendas"
+description: "Crie pipelines, monte as etapas, defina o que cada etapa exige e acompanhe os negócios no quadro."
+icon: "filter"
+---
+
+**Funil de vendas**, no grupo **Vendas** do menu lateral, é onde ficam os pipelines da conta. Cada pipeline é um quadro com colunas (as etapas), e cada cartão do quadro é um negócio. Para trabalhar com os cartões, veja [Negócios](/vendas/negocios).
+
+<Info>
+  Só administradores criam, editam e excluem pipelines e etapas. Agentes veem os pipelines e trabalham nos negócios. Sem nenhum pipeline, o agente vê "Um administrador precisa criar o primeiro pipeline."
+</Info>
+
+## Pipelines
+
+A coluna **Pipelines**, à esquerda do quadro, lista os pipelines da conta. Use **Buscar pipeline** para encontrar um pelo nome e **Recolher pipelines** para ganhar espaço. Os pipelines com **Grupo** aparecem reunidos sob o nome do grupo.
+
+### Criar um pipeline
+
+<Steps>
+  <Step title="Abra o formulário">
+    Clique em **Adicionar pipeline**, no pé da lista. Se a conta ainda não tem pipeline, use **Criar pipeline** no meio da tela.
+  </Step>
+  <Step title="Preencha os dados">
+    | Campo | O que faz |
+    | --- | --- |
+    | **Nome** | Nome do pipeline, até 100 caracteres. |
+    | **Descrição (opcional)** | Para que serve o pipeline. |
+    | **Grupo (opcional)** | Agrupa pipelines na lista, por exemplo "Comercial". |
+    | **Tipo** | **Vendas** (com valor, ganho e perda) ou **Gestão** (para acompanhar processos, sem valor). |
+    | **Como chamar cada item** | O nome dos cartões: **Padrão (negócio)**, **Cliente**, **Caso**, **Processo** ou **Personalizado**. |
+    | **Negócio parado após (dias)** | Prazo, de 1 a 365 dias, que cada etapa nova recebe. O padrão é 7. |
+  </Step>
+  <Step title="Nomeie as colunas de fechamento">
+    Em **Colunas de fechamento**, dê nome e cor às colunas de ganho e de perda. Os nomes padrão são **Ganho** e **Perda**.
+  </Step>
+  <Step title="Crie">
+    Clique em **Criar pipeline**. O pipeline nasce com três colunas: **Novo contato**, a coluna de ganho e a coluna de perda.
+  </Step>
+</Steps>
+
+### Tipo do pipeline
+
+O tipo é escolhido na criação e não muda depois. Num pipeline **Gestão**, o valor não aparece no quadro, nos cartões, no formulário de novo item nem nos detalhes. As colunas de ganho e de perda continuam existindo nos dois tipos.
+
+### Como chamar cada item
+
+O nome escolhido aparece no botão **Novo …**, nos contadores, no cartão e nos menus. Com **Personalizado**, escreva o nome (até 30 caracteres), por exemplo "Chamado". Dá para mudar depois: muda só o texto.
+
+### Pipeline padrão
+
+O primeiro pipeline da conta vira o padrão e ganha o selo **Padrão**. O pipeline padrão é o que a [entrada de leads](/vendas/entrada-de-leads) usa e o que o relatório [Visão geral](/relatorios/visao-geral) mostra.
+
+Para trocar, abra o menu do pipeline na lista e escolha **Definir como padrão**. Sempre existe um pipeline padrão: não dá para desligar o padrão sem escolher outro.
+
+### Editar e excluir
+
+Abra o menu **Opções do pipeline**, ao lado do nome do pipeline na lista. O menu tem:
+
+| Opção | O que abre |
+| --- | --- |
+| **Editar pipeline** | Os dados do pipeline, a ordem das etapas e os nomes e cores das colunas de fechamento. |
+| **Personalizar cartão** | Os campos extras do cartão. Veja "Personalizar o cartão", mais abaixo. |
+| **Entrada de leads** | A criação automática de negócios. Veja [Entrada de leads](/vendas/entrada-de-leads). |
+| **IA do pipeline** | Os recursos de IA. Veja [IA do pipeline](/vendas/ia-do-pipeline). |
+| **Definir como padrão** | Torna este pipeline o padrão. |
+| **Excluir pipeline** | Exclui o pipeline e as etapas dele. |
+
+O botão **Configurar pipeline**, no topo do quadro, tem as quatro primeiras opções.
+
+<Warning>
+  Não é possível excluir o pipeline padrão: defina outro como padrão antes. Um pipeline que ainda tem negócios também não pode ser excluído: mova ou exclua os negócios primeiro.
+</Warning>
+
+## Etapas
+
+Cada coluna do quadro é uma etapa. **Novo contato** é sempre a primeira. As colunas de ganho e de perda são obrigatórias e sempre fecham o quadro. As etapas que você cria ficam entre elas.
+
+### Criar uma etapa
+
+<Steps>
+  <Step title="Escolha a posição">
+    No cabeçalho de uma etapa aberta, clique em **Nova etapa depois desta**.
+  </Step>
+  <Step title="Preencha">
+    Dê um **Nome da etapa** (de 2 a 50 caracteres, sem repetir outro nome do pipeline) e escolha a **Cor**. Se quiser, configure já o que a etapa exige (veja abaixo).
+  </Step>
+  <Step title="Salve">
+    Clique em **Criar etapa**. A etapa nasce com o prazo de **Negócio parado após (dias)** do pipeline.
+  </Step>
+</Steps>
+
+### Menu da etapa
+
+Abra o menu no cabeçalho da coluna:
+
+| Opção | O que faz |
+| --- | --- |
+| **Editar etapa** | Muda nome, cor, prazo de parado e exigências. Nas colunas de ganho e de perda, a opção se chama **Editar**. |
+| **O que esta etapa exige** | Abre a etapa direto nas exigências. |
+| **Impulsos** | Mensagens automáticas da etapa e campanha pontual. Veja [Impulsos e campanhas](/vendas/impulsos-e-campanhas). |
+| **Mover para a direita** | Troca a etapa de lugar com a próxima. Só vale entre as etapas que você criou. |
+| **Excluir etapa** | Exclui a etapa. |
+
+**Novo contato** e as colunas de fechamento não podem ser excluídas nem movidas. Para reordenar várias etapas de uma vez, abra **Editar pipeline** e arraste as etapas na lista **Etapas**; **Novo contato** fica sempre em primeiro.
+
+Ao excluir uma etapa que tem negócios, escolha a etapa aberta que vai recebê-los. As tarefas obrigatórias da etapa excluída viram tarefas comuns.
+
+### Prazo de parado
+
+Em **Parado depois de (dias)**, defina quantos dias um negócio pode ficar na etapa. O cartão fica amarelo perto desse limite (a partir de 75% do prazo) e vermelho quando passa dele. As colunas de ganho e de perda não têm prazo.
+
+## O que cada etapa exige
+
+Em **O que esta etapa exige**, a seção **Ao entrar nesta etapa** define regras que valem quando um negócio é movido para a etapa. Se faltar algo, o ChatClean não move o negócio e avisa o que falta, por exemplo: "A etapa Proposta enviada exige: valor maior que zero."
+
+| Opção | O que faz |
+| --- | --- |
+| **Exigir responsável** | A oportunidade só entra na etapa com alguém responsável. Todo negócio já tem um responsável, então essa regra está sempre atendida. |
+| **Exigir campos preenchidos** | Escolha campos do negócio que precisam estar preenchidos. Os campos são criados em **Configurações → Atributos Personalizados**, no modelo **Negócio**. Veja [Atributos personalizados](/configuracoes/atributos-personalizados). |
+| **Exigir da oportunidade** | **Data prevista de fechamento**, **Valor maior que zero** e **Pelo menos um produto**. |
+| **Tarefas obrigatórias** | Até 20 tarefas que o negócio ganha ao entrar na etapa. |
+| **Aplicar etiquetas** | Etiquetas que o contato do negócio recebe ao entrar na etapa. Veja [Etiquetas](/configuracoes/etiquetas). |
+| **Exigir documento** | A oportunidade só entra na etapa com um documento anexado. |
+
+Detalhes de cada regra:
+
+- **Tarefas obrigatórias** viram atividades do tipo **Interna**, com prazo de um dia e o responsável do negócio. Elas podem ser concluídas, mas não excluídas, e não se repetem.
+- **Aplicar etiquetas** só funciona quando o negócio tem contato.
+- Ao criar um negócio direto numa etapa, o ChatClean confere a data, o valor e o produto. Os campos personalizados e o documento são conferidos na próxima vez que o negócio mudar de etapa.
+- Os negócios criados pela [entrada de leads](/vendas/entrada-de-leads) entram em **Novo contato** sem conferência; a próxima mudança de etapa confere tudo.
+- Com **Preencher campos ao mover** ligado na [IA do pipeline](/vendas/ia-do-pipeline), a IA tenta preencher os campos exigidos a partir da conversa antes da conferência.
+
+## O quadro
+
+O topo do quadro mostra o nome do pipeline, o botão **Novo …** e a barra de ferramentas.
+
+### Contadores
+
+- Ao lado da barra de ferramentas, o total de itens em aberto que estão na tela e a soma dos valores, por exemplo "12 negócios · R$ 48.000".
+- Embaixo do nome de cada etapa, o valor e a quantidade de cartões da coluna.
+- Num pipeline **Gestão**, os valores aparecem como **Sem dados**.
+
+### Ganhos e perdidos do período
+
+As colunas de ganho e de perda mostram os negócios fechados nos últimos 30 dias. O período aparece no cabeçalho da coluna, por exemplo **Últimos 30 dias**. Para mudar, use **Período** na barra de ferramentas, em **Fechados, ganhos ou perdidos**: **7 dias**, **30 dias** ou **90 dias**. Em **Mostrar:**, **Tudo** mostra os fechados de qualquer data.
+
+### Barra de ferramentas
+
+| Controle | O que faz |
+| --- | --- |
+| **Buscar por nome, telefone ou número** | Busca pelo nome, título, contato, telefone, e-mail, empresa ou número (#12). |
+| **Filtrar** | Adiciona filtros: **Responsável**, **Etiqueta**, **Produto**, **Status**, **Motivo de perda**, **Origem do lead**, **Etapa**, **Valor (R$)**, **Atividades**, **Parado na etapa**, **Contato**, **Empresa**, **Título**, **Canal**, **Criado em**, **Entrou na etapa** e **Data prevista de fechamento**. |
+| **Mostrar:** | **Em aberto** ou **Tudo**. |
+| **Ordenar:** | **Mais tempo na etapa** (o padrão), **Movidos recentemente**, **Criados recentemente**, **Criados há mais tempo**, **Maior valor**, **Menor valor** ou **Próxima atividade**. |
+| **Período** | Em **Abertos, criados**: **Qualquer data**, **7 dias**, **30 dias**, **90 dias** ou **Personalizado**. Em **Fechados, ganhos ou perdidos**: **7 dias**, **30 dias** ou **90 dias**. |
+
+O filtro **Parado na etapa** mostra só os cartões que passaram do prazo da etapa. O filtro **Atividades** separa os negócios por próxima atividade: **Atrasadas**, **Para hoje**, **Próximas** ou **Sem atividade**.
+
+## Personalizar o cartão
+
+Todo cartão mostra o nome, o número, o responsável, o valor (em pipelines **Vendas**), a próxima atividade quando houver e há quanto tempo o negócio está na etapa ("Na etapa há 3 d").
+
+Em **Personalizar cartão**, escolha até 4 campos para aparecer embaixo do cartão padrão:
+
+- **Data prevista de fechamento**
+- **Produtos**
+- **Próxima tarefa**
+- **Etiquetas do contato**
+- **Origem**
+- **Anexos**
+- **Temperatura**
+
+Cada campo só aparece quando está preenchido. Todo o time vê os mesmos campos em todos os cartões do pipeline.

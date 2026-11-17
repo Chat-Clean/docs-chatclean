@@ -1,0 +1,149 @@
+---
+title: "Negócios"
+description: "Crie negócios, mova entre etapas, registre valor, produtos, atividades e arquivos, e marque como ganho ou perdido."
+icon: "handshake"
+---
+
+Um negócio (ou oportunidade) é um cartão do [Funil de vendas](/vendas/funil). Ele tem um responsável, uma etapa e, se você quiser, um contato, uma empresa, um valor e produtos. Cada negócio recebe um número sequencial na conta, como **#12**.
+
+O nome do cartão é o **Título**. Sem título, o cartão usa o nome do contato ou da empresa. Se o pipeline chama os itens de outra forma (Cliente, Caso, Processo), os botões e menus usam esse nome.
+
+## Criar um negócio
+
+<Steps>
+  <Step title="Abra o formulário">
+    No quadro, clique em **Novo negócio** no topo, ou no botão **Novo negócio** no pé de uma coluna para já criar naquela etapa.
+  </Step>
+  <Step title="Preencha">
+    | Campo | O que faz |
+    | --- | --- |
+    | **Contato** | Opcional. Busque por nome ou telefone. Não achou? Digite o número e escolha **Criar contato com…**. |
+    | **Empresa** | Opcional. Veja [Empresas](/vendas/empresas). |
+    | **Título** | Obrigatório quando o negócio não tem contato nem empresa. Até 120 caracteres. |
+    | **Valor (R$)** | Só em pipelines **Vendas**. Com produtos, o valor é a soma deles. |
+    | **Etapa** | A coluna onde o negócio entra. |
+    | **Data prevista de fechamento** | Opcional. |
+    | **Produtos** | Itens do catálogo. Veja [Produtos](/vendas/produtos). |
+    | **Responsável** | Quem cuida do negócio. |
+  </Step>
+  <Step title="Crie">
+    Clique em **Criar negócio**. Os detalhes do negócio abrem em seguida.
+  </Step>
+</Steps>
+
+Se a etapa escolhida exige data, valor ou produto, o negócio só é criado com esses dados. Veja [O que cada etapa exige](/vendas/funil#o-que-cada-etapa-exige).
+
+Você também cria negócios pela ficha do contato (veja "Negócio, contato e conversa", abaixo) e automaticamente, a cada conversa nova, com a [entrada de leads](/vendas/entrada-de-leads).
+
+## Responsável e visibilidade
+
+| Ação | Administrador | Agente |
+| --- | --- | --- |
+| Ver os negócios de um pipeline | Todos | Todos |
+| Criar negócio | Escolhe o responsável | Fica como responsável |
+| Editar negócio | Sim | Sim |
+| Trocar o responsável | Sim | Não |
+| Excluir negócio | Qualquer um | Só aqueles de que é responsável |
+
+Toda troca de responsável fica registrada no **Histórico** do negócio.
+
+## Mover entre etapas
+
+- Arraste o cartão para outra coluna.
+- Ou clique em **Mover** no cartão (aparece ao passar o mouse) e escolha a etapa de destino. A lista mostra as etapas do mesmo pipeline.
+- Ou, nos detalhes, troque a etapa no seletor de etapa do topo.
+
+Se a etapa de destino exige algo que falta, o ChatClean não move o negócio e avisa o que falta. Ao entrar na etapa, o negócio ganha as tarefas obrigatórias, o contato recebe as etiquetas da etapa e os [impulsos](/vendas/impulsos-e-campanhas) da etapa começam. Ao sair, os passos de impulso pendentes são cancelados.
+
+## Ganhar ou perder
+
+Arraste o cartão para a coluna de ganho ou de perda, ou use **Ganhar** e **Perder** no menu **Ações** dos detalhes. O ChatClean pede o motivo:
+
+<Tabs>
+  <Tab title="Ganho">
+    **Motivo do ganho (opcional)**: **Não informar**, **Melhor preço**, **Prazo de entrega**, **Relacionamento**, **Indicação**, **Recursos do produto** ou **Outro**.
+  </Tab>
+  <Tab title="Perda">
+    **Motivo da perda** (obrigatório): **Preço**, **Sem interesse**, **Escolheu concorrente**, **Sem resposta**, **Fora do perfil** ou **Outro**.
+  </Tab>
+</Tabs>
+
+Nos dois casos, a **Justificativa (opcional)** guarda o que levou ao resultado. O negócio passa ao status **Ganho** ou **Perdido** e fica com a data de fechamento. O motivo e a justificativa aparecem nos detalhes e no relatório [Vendas & Pipeline](/relatorios/vendas).
+
+Para reabrir, mova o negócio de volta para uma etapa aberta. Ele volta a **Aberto** e perde a data, o motivo e a justificativa do fechamento.
+
+## Detalhes do negócio
+
+Clique num cartão para abrir os detalhes. O topo mostra o número, o status, a temperatura (quando a IA está ligada), a etapa, o botão **Nova atividade** e o menu **Ações**: **Ganhar**, **Perder**, **Mover**, **Duplicar** e **Excluir**.
+
+A lateral tem:
+
+- **IA do pipeline**: temperatura e próximo passo sugerido, quando ligados. Veja [IA do pipeline](/vendas/ia-do-pipeline).
+- **Empresa** e o contato vinculado.
+- As etiquetas do contato. Sem contato vinculado, não há etiquetas.
+- **Responsável**.
+- **Nota do negócio**: anotações internas.
+- **Campos do negócio**: a **Data prevista de fechamento** e os campos personalizados do modelo **Negócio** (veja [Atributos personalizados](/configuracoes/atributos-personalizados)).
+
+E as abas:
+
+| Aba | O que mostra |
+| --- | --- |
+| **Informações** | Valor, produtos, o pipeline completo com o tempo em cada etapa, número, data de criação, desde quando está na etapa, origem do lead e a jornada do negócio. |
+| **Histórico** | Tudo o que aconteceu: criação, mudanças de etapa, ganho, perda, reabertura, troca de responsável, campos alterados, atividades, arquivos, impulsos e campanhas. |
+| **Atividades** | As tarefas do negócio, em **A fazer** e **Concluídas**. |
+| **Impulsos** | As mensagens automáticas dos impulsos neste negócio. |
+| **Negócios** | Os outros negócios do mesmo contato ou da mesma empresa. |
+| **Arquivos** | Propostas, contratos e outros documentos. |
+| **Atendimentos** | As conversas do contato. Clique para abrir a conversa. |
+
+**Duplicar** cria uma cópia com a mesma etapa, contato, empresa, título, valor, data prevista, nota e produtos ("Cópia #13 criada"). **Excluir** apaga o negócio de vez: "Isso não pode ser desfeito."
+
+## Valor e produtos
+
+Na aba **Informações**, **Valor do negócio** mostra o valor. Clique em **Editar valor** para mudar.
+
+Em **Produtos**, use **Adicionar produto** para incluir itens do catálogo. Cada item tem **Quantidade** e **Preço unitário**; o preço vem do catálogo e pode ser mudado só neste negócio. Com pelo menos um produto, o valor do negócio passa a ser a soma dos produtos ("Soma dos produtos") e não pode ser editado à mão.
+
+Só produtos ativos podem ser adicionados. Sem produtos cadastrados, a área avisa para cadastrar em **Produtos**. Veja [Produtos](/vendas/produtos).
+
+## Atividades
+
+Atividades são as tarefas do negócio. Crie com **Nova atividade**, no topo dos detalhes, ou com **Atividade**, na aba **Atividades**.
+
+| Campo | O que faz |
+| --- | --- |
+| **Título** | O que fazer, por exemplo "Ligar para confirmar a proposta". |
+| **Quando** | Data e hora. |
+| **Tipo** | **Ligação**, **Retorno**, **Compromisso** ou **Interna**. |
+| **Prioridade** | **Baixa**, **Média** ou **Alta**. |
+| **Responsável** | Quem faz a atividade. Só administradores escolhem outra pessoa. |
+| **Duração (min)** | Até 24 horas. |
+| **Avisar antes** | Mostra um lembrete na tela do responsável: **Sem aviso**, **Na hora**, alguns minutos antes, **1 hora antes** ou **1 dia antes**. |
+| **Lembrar o cliente antes** | Envia uma mensagem ao contato do negócio antes da atividade. Precisa de contato vinculado. |
+| **Descrição** | Detalhes para quem vai fazer. |
+| **Repete** | **Não se repete**, **Todo dia**, **Toda semana** ou **Todo mês**. Ao concluir, o ChatClean cria a próxima. |
+| **Checklist** | Até 30 itens. |
+
+Os campos a partir de **Tipo** ficam em **Mais opções**. Use **Marcar como concluída** para fechar a atividade e **Marcar como a fazer** para reabrir. Uma atividade vencida aparece como **Atrasada**, também no cartão do quadro.
+
+As tarefas obrigatórias de uma etapa aparecem como **Obrigatória de [etapa]**: podem ser concluídas, mas não excluídas. Uma atividade pode ser excluída por administradores, pelo responsável dela ou pelo responsável do negócio.
+
+## Arquivos
+
+Na aba **Arquivos**, escolha a **Categoria** e clique em **Enviar arquivo**. As categorias são **Proposta comercial**, **Contrato**, **Documento do cliente**, **Comprovante** e **Outro**.
+
+São aceitos PDF, Word, Excel, PowerPoint, texto, CSV, zip e imagens PNG, JPG e WebP. Para baixar, use **Baixar**. Um arquivo pode ser excluído por administradores, por quem enviou ou pelo responsável do negócio.
+
+Uma etapa pode exigir documento anexado; veja [O que cada etapa exige](/vendas/funil#o-que-cada-etapa-exige).
+
+## Temperatura
+
+Com a IA do pipeline ligada, o negócio pode ganhar um selo de temperatura: **Frio**, **Morno** ou **Quente**. Passe o mouse no selo para ver o motivo. Veja [IA do pipeline](/vendas/ia-do-pipeline).
+
+## Negócio, contato e conversa
+
+- **Contato**: sem contato, o cartão mostra **sem contato**. Para vincular, use **Vincular contato** nos detalhes: **Buscar existente** ou **Criar** (nome e **Telefone com DDD**). Com um contato vinculado, o chat, as métricas e os atendimentos passam a funcionar. **Desvincular** remove o contato do negócio.
+- **Conversa**: os negócios criados pela [entrada de leads](/vendas/entrada-de-leads) guardam a conversa de origem. A aba **Informações** mostra a **Origem do lead**, por exemplo **Atendimento #120**.
+- **Ficha do contato**: em [Contatos](/atendimento/contatos), a aba **Oportunidades** lista os negócios do contato. Escolha o pipeline e clique em **Nova oportunidade** para criar um. Clique num negócio para abrir no quadro.
+- **Excluir contato**: um contato com negócios não pode ser excluído. Use **Arquivar contato**: as oportunidades dele continuam e seguem contando nos relatórios. No quadro, o cartão mostra **contato arquivado**. O contato volta sozinho quando manda mensagem.

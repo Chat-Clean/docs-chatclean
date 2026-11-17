@@ -1,0 +1,125 @@
+---
+title: "Impulsos e campanhas"
+description: "Envie mensagens automáticas quando um negócio entra numa etapa, ou dispare uma mensagem para todos que estão nela agora."
+icon: "paper-plane"
+---
+
+Cada etapa do [Funil de vendas](/vendas/funil) pode mandar mensagens ao contato do negócio de duas formas:
+
+- **Impulsos**: uma sequência de mensagens que começa quando o negócio entra na etapa.
+- **Campanha pontual**: uma mensagem enviada uma vez, agora, para os negócios que já estão na etapa.
+
+Abra o menu da etapa, no cabeçalho da coluna, e escolha **Impulsos**. A janela tem as abas **Impulsos** e **Campanha pontual**. Todas as etapas têm essa opção, inclusive as colunas de ganho e de perda.
+
+<Info>
+  Só administradores criam impulsos e campanhas. No negócio, administradores e o responsável pelo negócio podem cancelar um passo agendado.
+</Info>
+
+## A mensagem
+
+Impulsos e campanhas usam o mesmo editor de mensagem. Em **Mensagem**, escolha:
+
+| Tipo | Como funciona |
+| --- | --- |
+| **Texto livre** | Você escreve o **Texto da mensagem**. No WhatsApp, o texto livre só sai até 24 horas depois da última mensagem do contato. Fora disso a mensagem não sai, e a falha fica registrada no histórico. |
+| **Modelo do WhatsApp** | Escolha a **Caixa de entrada do WhatsApp**, o **Modelo aprovado** e preencha cada variável do modelo. O modelo aprovado sai mesmo fora da janela de 24 horas e vai pela conversa de WhatsApp do contato. Veja [Modelos do WhatsApp](/configuracoes/modelos-whatsapp). |
+
+O texto livre vai pela conversa do negócio ou, se o negócio não tem conversa, pela conversa mais recente do contato.
+
+Você pode usar estas variáveis no texto e nos valores do modelo:
+
+| Variável | Vira |
+| --- | --- |
+| `{{contact.name}}` | Nome do contato |
+| `{{contact.first_name}}` | Primeiro nome do contato |
+| `{{deal.title}}` | Nome do negócio |
+| `{{deal.stage}}` | Etapa atual |
+| `{{deal.owner}}` | Responsável pelo negócio |
+
+## Impulsos
+
+### Criar um impulso
+
+<Steps>
+  <Step title="Comece">
+    Na aba **Impulsos**, clique em **Novo impulso**.
+  </Step>
+  <Step title="Nomeie">
+    Dê um **Nome do impulso**, por exemplo "Retorno da proposta" (até 80 caracteres). Deixe **Ativo** ligado.
+  </Step>
+  <Step title="Decida se para na resposta">
+    **Parar quando o contato responder** vem ligado. Com ele, uma resposta do contato cancela os passos que faltam.
+  </Step>
+  <Step title="Monte os passos">
+    Cada passo tem uma espera e uma mensagem. A espera do **Passo 1** conta a partir da entrada na etapa (**Esperar depois de entrar na etapa**). A dos passos seguintes conta a partir do passo anterior (**Esperar depois do passo anterior**). Informe a espera em **minutos**, **horas** ou **dias**; zero envia **na hora**. Use **Adicionar passo** para incluir mais.
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar impulso**.
+  </Step>
+</Steps>
+
+Um impulso tem de 1 a 10 passos. Cada espera vai de 0 a 90 dias.
+
+A lista da aba mostra cada impulso com o número de passos e as esperas, por exemplo "na hora → depois de 2 dias". Use a chave **Ativo** para pausar um impulso sem excluí-lo, **Editar impulso** para mudar e **Excluir impulso** para apagar.
+
+### Quando um impulso roda e quando para
+
+- O impulso começa quando o negócio entra na etapa. Os negócios que já estão nela não entram.
+- Sair da etapa cancela os passos pendentes.
+- Desativar o impulso cancela os passos agendados.
+- Com **Parar quando o contato responder**, uma mensagem do contato cancela os passos pendentes dos impulsos com essa opção, em todos os negócios do contato.
+- Um negócio sem contato não recebe impulsos; o histórico registra a falha.
+
+### Acompanhar no negócio
+
+Nos detalhes do negócio, a aba **Impulsos** lista cada passo com o status: **Agendado**, **Enviado**, **Cancelado** ou **Falhou**. Um passo agendado pode ser cancelado em **Cancelar**. Os envios, falhas e cancelamentos também aparecem no **Histórico**.
+
+Motivos de falha ou cancelamento:
+
+| Motivo | O que significa |
+| --- | --- |
+| o negócio não tem contato | Vincule um contato ao negócio. |
+| o contato não tem atendimento | Não há conversa para enviar o texto. |
+| o contato não tem atendimento no WhatsApp | O modelo precisa de uma conversa de WhatsApp. |
+| o modelo não está aprovado nesta caixa de entrada | O modelo escolhido não está aprovado na caixa de entrada da conversa. |
+| fora da janela de 24 horas, exige modelo aprovado | O texto livre passou da janela; use um modelo. |
+| o negócio mudou de etapa | O negócio saiu da etapa antes do envio. |
+| o contato respondeu | O impulso para na resposta. |
+| o impulso foi desativado | Alguém desligou o impulso. |
+| cancelado por um usuário | Alguém cancelou o passo no negócio. |
+
+## Campanha pontual
+
+A campanha pontual envia uma mensagem agora para os negócios que estão na etapa. Quem entrar depois não recebe.
+
+<Steps>
+  <Step title="Comece">
+    Na aba **Campanha pontual**, clique em **Nova campanha**.
+  </Step>
+  <Step title="Nomeie">
+    Dê um **Nome da campanha**, por exemplo "Repescagem Propostas - Novembro" (até 80 caracteres).
+  </Step>
+  <Step title="Escolha quem recebe">
+    Em **Quem recebe**, filtre por **Responsável** (ou **Todos os responsáveis**) e, se quiser, por **Parados na etapa há mais de (dias)**. Deixe os dias vazios para incluir todos os negócios da etapa.
+  </Step>
+  <Step title="Escreva a mensagem">
+    Use o editor de mensagem descrito acima.
+  </Step>
+  <Step title="Confira e dispare">
+    O resumo mostra para quantos negócios a campanha será enfileirada. Clique em **Disparar campanha agora**.
+  </Step>
+</Steps>
+
+O resumo também avisa o que fica de fora:
+
+- Negócios sem contato são ignorados.
+- Um negócio que já está numa campanha em andamento da mesma etapa fica de fora até ela terminar.
+- Nas colunas de ganho e de perda, só entram os negócios que fecharam nos últimos 30 dias, como no quadro.
+
+As mensagens saem uma a cada 3 segundos.
+
+### Acompanhar a campanha
+
+A aba lista as campanhas da etapa, com quem disparou e quando, o status (**Em andamento**, **Concluída** ou **Cancelada**) e as contagens de agendados, enviados, falhas e cancelados. Enquanto há envios agendados, **Cancelar pendentes** interrompe a campanha.
+
+Cada envio também aparece no **Histórico** do negócio, por exemplo "Campanha “Repescagem Propostas - Novembro” enviada".

@@ -1,0 +1,69 @@
+---
+title: "Robôs"
+description: "Conecte um robô próprio a uma caixa de entrada por webhook para fazer o primeiro atendimento e passar a conversa para um agente."
+icon: "robot"
+---
+
+Um robô (agent bot) é um serviço seu, fora do ChatClean, que recebe os eventos das conversas por webhook e responde pela API. Ele faz o primeiro atendimento e passa a conversa para um agente humano quando for preciso.
+
+Os robôs ficam em **Automação → Robôs**, no menu lateral. Só administradores acessam essa tela.
+
+## Como funciona
+
+1. Você cria o robô no ChatClean e informa a **URL do Webhook** do seu serviço.
+2. Você conecta o robô a uma caixa de entrada.
+3. A cada evento nessa caixa (mensagem criada, conversa aberta, conversa resolvida e outros), o ChatClean envia os dados para a URL do robô.
+4. O seu serviço responde ao cliente pela [API](/api-reference/introduction), usando o **Token de acesso** do robô.
+
+Com um robô ativo na caixa de entrada, as conversas novas começam com o status pendente (filtro **Pendentes** na lista de conversas): elas ficam com o robô até serem abertas para a equipe. Para passar a conversa a um agente, o seu serviço muda o status da conversa para aberta.
+
+<Note>
+  Se a entrega do webhook falhar numa mensagem, a conversa pendente é marcada como aberta e aparece para a equipe com o aviso "A conversa foi marcada como aberta pelo sistema devido a um erro com o robô de atendimento."
+</Note>
+
+## Criar um robô
+
+<Steps>
+  <Step title="Criar Robô">
+    Em **Automação → Robôs**, clique em **Criar Robô**.
+  </Step>
+  <Step title="Dados do robô">
+    Preencha **Nome do Robô** (obrigatório), **Descrição** e, se quiser, o **Avatar do robô**.
+  </Step>
+  <Step title="URL do Webhook">
+    Informe a **URL do Webhook**, começando com `http://` ou `https://`. É para ela que o ChatClean envia os eventos.
+  </Step>
+  <Step title="Salvar">
+    Clique em **Criar um Robô**. Em seguida, copie o **Token de acesso** e o **Segredo do Webhook** e guarde em lugar seguro.
+  </Step>
+</Steps>
+
+## Token de acesso e segredo
+
+- **Token de acesso**: o seu serviço usa esse token para chamar a API como o robô, por exemplo para enviar mensagens.
+- **Segredo do Webhook**: serve para o seu serviço conferir a assinatura de cada evento e ter certeza de que ele veio do ChatClean. Veja como validar em [Webhooks](/api-reference/guides/webhooks).
+
+Os dois continuam disponíveis depois em **Alterar**, na lista de robôs. Lá você também pode gerar um novo token ou um novo segredo. Ao gerar de novo, o valor anterior para de valer, então atualize o seu serviço.
+
+## Conectar o robô a uma caixa de entrada
+
+<Steps>
+  <Step title="Abra a caixa de entrada">
+    Em **Canais**, abra as configurações da caixa de entrada.
+  </Step>
+  <Step title="Configuração do Bot">
+    Na aba **Configuração do Bot**, escolha o robô em **Selecione um robô de agente**.
+  </Step>
+  <Step title="Atualizar">
+    Clique em **Atualizar**.
+  </Step>
+</Steps>
+
+Para tirar o robô da caixa de entrada, use **Desconectar Robô** na mesma aba.
+
+## A lista de robôs
+
+A lista mostra o **Detalhe do Robô** e a **URL do Webhook** de cada um. Robôs marcados com **Sistema** são robôs do sistema, disponíveis para todas as contas.
+
+- **Alterar**: muda nome, descrição, avatar e URL, e mostra o token e o segredo.
+- **Excluir**: apaga o robô depois da confirmação.

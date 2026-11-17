@@ -1,0 +1,94 @@
+---
+title: "Perfil"
+description: "Ajuste seu nome, foto, senha, idioma, assinatura de mensagem, alertas e notificações, e copie o token de acesso à API."
+icon: "user"
+---
+
+Cada pessoa da equipe tem o próprio perfil. Para abrir, clique no seu avatar, no canto do menu lateral, e escolha **Configurações do Perfil**. Administradores e agentes acessam essa tela.
+
+## Perfil
+
+- **Foto do perfil**: clique na imagem para enviar uma foto nova ou removê-la.
+- **Seu nome completo**: o seu nome na conta.
+- **Nome para exibição**: o nome que aparece nas conversas.
+- **Seu e-mail**: o e-mail usado para entrar no ChatClean.
+
+Clique em **Atualizar o Perfil** para salvar.
+
+<Warning>
+  Se você mudar o e-mail, precisa entrar de novo, porque o e-mail é o seu login.
+</Warning>
+
+## Interface
+
+- **Tamanho da fonte**: ajusta o tamanho do texto do painel, de **Menor** a **Muito Grande**.
+- **Idioma preferido**: o idioma da interface só para você. **Usar padrão da conta** segue o idioma definido em [Conta](/configuracoes/conta).
+
+## Assinatura de mensagens pessoais
+
+Escreva no campo da assinatura o texto que vai no fim das mensagens que você envia, como nome e cargo. Nas caixas de entrada de chat ao vivo, e-mail e API, a assinatura também pode ter uma imagem. Clique em **Salvar assinatura da mensagem**.
+
+## Tecla de atalho para enviar mensagens
+
+Escolha como enviar a mensagem pelo teclado:
+
+- **Enter (↵)**: a tecla Enter envia a mensagem.
+- **Cmd/Ctrl + Enter (⌘ + ↵)**: a combinação Cmd/Ctrl + Enter envia a mensagem.
+
+## Senha
+
+Para trocar a senha, preencha **Senha atual**, **Nova senha** (6 caracteres ou mais) e **Confirme a nova senha**, e clique em **Mudar Senha**. A troca encerra o seu login nos outros dispositivos.
+
+## Sessões Ativas
+
+Mostra os dispositivos conectados à sua conta, com a **Última atividade** de cada um. A sessão deste dispositivo aparece como **Sessão atual**. Use **Revogar** para desconectar um dispositivo.
+
+## Alertas de áudio
+
+Toca um som no painel quando chegam mensagens e conversas novas. Você escolhe o som e, em **Eventos de alerta para conversas**, marca para quais conversas quer o alerta:
+
+- **Conversas atribuídas a mim**
+- **Conversas não atribuídas**
+- **Conversas abertas atribuídas a outras pessoas**
+
+Sem nenhuma opção marcada, você não recebe alertas de áudio.
+
+Em **Condições:**, você também pode marcar **Enviar alertas de áudio apenas se a janela do navegador não estiver ativa** e **Enviar alertas a cada 30 segundos até que todas as conversas atribuídas sejam lidas**.
+
+Se o navegador bloquear a reprodução automática, libere o som do site nas configurações do navegador.
+
+## Preferências de notificação
+
+Uma tabela mostra cada **Tipo de notificação** com duas colunas: **E-mail** e **Notificação** (push no navegador). Marque onde você quer ser avisado:
+
+- **Uma nova conversa foi criada**
+- **Uma conversa foi atribuída a você**
+- **Você foi mencionado em uma conversa**
+- **Uma nova mensagem foi criada e atribuída**
+- **Uma nova mensagem foi criada em uma conversa que você participa**
+
+Para receber as notificações push, permita as notificações do ChatClean no navegador.
+
+## Token de acesso
+
+O **Token de acesso** autentica as chamadas que você faz à [API do ChatClean](/api-reference/introduction). Cada pessoa tem o seu, e ele age com as mesmas permissões da sua função na conta.
+
+- **Copiar**: copia o token.
+- **Reiniciar**: gera um token novo. Clique de novo para confirmar. O token anterior para de funcionar na hora, então atualize as integrações que o usam.
+
+Envie o token no cabeçalho `api_access_token`:
+
+```bash
+curl https://chat.chatclean.com.br/api/v1/accounts/ID_DA_CONTA/conversations \
+  -H "api_access_token: SEU_TOKEN"
+```
+
+O `ID_DA_CONTA` fica em [Conta](/configuracoes/conta#id-da-conta).
+
+<Warning>
+  Trate o token como uma senha: não compartilhe e não coloque em código que roda no navegador.
+</Warning>
+
+## Disponibilidade
+
+A disponibilidade (**Online**, **Ocupado** ou **Offline**) não fica nesta tela. Troque pelo avatar, no menu lateral, em **Disponibilidade**. Veja [Agentes](/configuracoes/agentes#disponibilidade).

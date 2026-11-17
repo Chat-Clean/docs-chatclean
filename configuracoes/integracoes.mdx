@@ -1,0 +1,87 @@
+---
+title: "Integrações"
+description: "Envie eventos da conta para os seus sistemas por webhook, mostre aplicativos próprios dentro das conversas e conecte ferramentas externas."
+icon: "plug"
+---
+
+A tela **Configurações → Integrações** lista as ferramentas que você pode conectar ao ChatClean. Só administradores acessam essa tela. Clique em **Configurar** numa integração para abri-la.
+
+## Webhooks
+
+Um webhook envia uma chamada HTTP para um endereço seu sempre que algo acontece na conta, como uma mensagem nova ou um contato criado. Use para levar esses dados a outros sistemas, como um ERP ou uma ferramenta de automação, no momento em que acontecem. Você pode criar mais de um webhook na conta.
+
+### Criar um webhook
+
+<Steps>
+  <Step title="Adicionar">
+    Em **Integrações**, abra **Webhooks** e clique em **Adicionar novo Webhook**.
+  </Step>
+  <Step title="Endereço">
+    Informe a **URL do Webhook**, o endereço do seu sistema que vai receber os eventos. Se quiser, dê um **Nome do Webhook**.
+  </Step>
+  <Step title="Eventos">
+    Em **Eventos**, marque os eventos que você quer receber (veja a lista abaixo).
+  </Step>
+  <Step title="Salvar">
+    Clique em **Criar webhook**. Copie o **Segredo** que aparece e guarde em lugar seguro. Ele também fica disponível depois, ao editar o webhook.
+  </Step>
+</Steps>
+
+Use o **Segredo** para conferir a assinatura de cada chamada e ter certeza de que ela veio do ChatClean. O formato das chamadas e a validação da assinatura estão em [Webhooks na referência da API](/api-reference/guides/webhooks).
+
+### Eventos
+
+| Evento | Quando é enviado |
+| --- | --- |
+| **Conversa Criada** | Uma conversa nova começou. |
+| **Status de conversa alterado** | A conversa mudou de status (aberta, pendente, adiada, resolvida). |
+| **Conversa Atualizada** | Algum dado da conversa mudou. |
+| **Mensagem criada** | Uma mensagem foi enviada ou recebida. |
+| **Mensagem atualizada** | Uma mensagem foi alterada. |
+| **Widget de chat aberto pelo usuário** | O visitante abriu o chat do site. |
+| **Contato criado** | Um contato novo foi cadastrado. |
+| **Contato atualizado** | Os dados de um contato mudaram. |
+| **Status de Digitação ativado** | Alguém começou a digitar. |
+| **Status de Digitação desativado** | Alguém parou de digitar. |
+
+### Gerenciar webhooks
+
+A lista mostra o endereço de cada webhook. Use **Alterar** para mudar o endereço, o nome ou os eventos (salve com **Atualizar webhook**) e **Excluir** para apagar.
+
+<Tip>
+  Para enviar dados só em situações específicas, como quando uma conversa recebe certa etiqueta, use a ação **Enviar evento de Webhook** numa [regra de automação](/automacao/regras) em vez de um webhook da conta.
+</Tip>
+
+## Painel de Aplicativos
+
+O **Painel de Aplicativos** mostra uma página sua dentro da conversa, numa aba ao lado das mensagens. Use para dar contexto ao agente sem sair do ChatClean, como os pedidos do cliente ou o histórico de pagamentos no seu sistema.
+
+<Steps>
+  <Step title="Adicionar">
+    Em **Integrações**, abra **Painel de Aplicativos** e clique em **Adicionar um novo aplicativo**.
+  </Step>
+  <Step title="Dados">
+    Preencha o **Nome** (o título da aba na conversa) e o **Endpoint**, o endereço onde a sua página está hospedada.
+  </Step>
+  <Step title="Salvar">
+    Clique em **Enviar**.
+  </Step>
+</Steps>
+
+A página recebe os dados da conversa aberta por `postMessage`, num evento do tipo `appContext` com a conversa, o contato e o agente atual. A sua página precisa ouvir o evento `message` da janela para ler esses dados.
+
+Na lista, use **Alterar aplicativo** para editar e **Excluir aplicativo** para apagar.
+
+## Outras integrações
+
+| Integração | O que faz |
+| --- | --- |
+| **Dialogflow** | Conecta um robô criado no Dialogflow a uma caixa de entrada, para fazer o primeiro atendimento antes de passar a conversa para um agente. |
+| **Tradutor do Google** | Traduz as mensagens dos clientes para o idioma do agente. |
+| **Cloudflare RealtimeKit** | Permite que o agente inicie chamadas de vídeo e voz com o cliente pela conversa. |
+
+Cada uma pede as credenciais da própria ferramenta ao conectar.
+
+<Note>
+  Para um robô próprio, ligado por webhook ao seu serviço, use [Robôs](/automacao/robos).
+</Note>

@@ -1,0 +1,53 @@
+---
+title: "Produtos"
+description: "Cadastre o que a empresa vende e use o catálogo nos negócios, no valor e nos relatórios."
+icon: "box"
+---
+
+**Produtos**, no grupo **Vendas** do menu lateral, é o catálogo do que a empresa vende. Os negócios usam essa lista nos produtos e no valor.
+
+<Info>
+  Só administradores abrem a página **Produtos** e cadastram produtos. Todos adicionam produtos aos negócios.
+</Info>
+
+## Cadastrar um produto
+
+<Steps>
+  <Step title="Abra o formulário">
+    Clique em **Novo produto**.
+  </Step>
+  <Step title="Preencha">
+    | Campo | O que faz |
+    | --- | --- |
+    | **Nome** | Nome do produto, até 120 caracteres. Por exemplo, "Plano mensal". |
+    | **Descrição (opcional)** | O que vem incluído. |
+    | **Preço (R$)** | Preço padrão do produto. |
+    | **Código do produto (opcional)** | Seu código interno, até 60 caracteres. Por exemplo, "PLANO-01". |
+    | **Ativo: pode ser adicionado aos negócios** | Desligado, o produto fica fora da lista dos negócios. |
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+## Lista de produtos
+
+A tabela mostra **Nome**, **Preço**, **Situação** (**Ativo** ou **Desativado**) e **Ações**. Use **Buscar produtos** para encontrar um produto. Em **Ações**, **Editar** abre o produto e **Excluir produto** apaga.
+
+<Warning>
+  Um produto que já está em algum negócio não pode ser excluído. Desative o produto em vez de excluir: ele não pode mais ser adicionado a negócios, mas continua nos negócios que já o têm e nos relatórios.
+</Warning>
+
+## Produtos nos negócios
+
+- Nos detalhes do negócio, em **Produtos**, use **Adicionar produto** para incluir um item do catálogo. Só produtos ativos aparecem.
+- O **Preço unitário** começa com o preço do catálogo e pode ser mudado só naquele negócio. Mudar o preço no catálogo depois não altera os negócios que já têm o produto.
+- Com produtos, o valor do negócio é a soma de **Quantidade** vezes **Preço unitário** de cada item.
+
+Veja [Negócios](/vendas/negocios) para os detalhes.
+
+## Onde mais os produtos aparecem
+
+- **Etapas**: uma etapa pode exigir **Pelo menos um produto**. Veja [O que cada etapa exige](/vendas/funil#o-que-cada-etapa-exige).
+- **Quadro**: o filtro **Produto** e o campo **Produtos** em **Personalizar cartão**. Veja [Funil de vendas](/vendas/funil).
+- **Relatório**: o bloco **Por produto** do [Vendas & Pipeline](/relatorios/vendas) mostra as unidades vendidas e a receita de cada produto nos negócios ganhos.

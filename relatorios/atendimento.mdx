@@ -1,0 +1,108 @@
+---
+title: "Relatórios de atendimento"
+description: "Acompanhe volume de conversas, tempos de resposta e resolução por agente, time, etiqueta e caixa de entrada, além da satisfação dos clientes (CSAT) e do desempenho dos robôs."
+icon: "chart-line"
+---
+
+Os relatórios de atendimento ficam no grupo **Relatórios** do menu lateral. Só administradores acessam essa área.
+
+| Item do menu | O que mostra |
+| --- | --- |
+| **Conversas** | Métricas de toda a conta ao longo do tempo. |
+| **Agentes** | As mesmas métricas, por agente. |
+| **Etiquetas** | As mesmas métricas, por etiqueta. |
+| **Caixa de Entrada** | As mesmas métricas, por caixa de entrada. |
+| **Time** | As mesmas métricas, por time. |
+| **CSAT** | Respostas da pesquisa de satisfação. |
+| **Robôs** | Desempenho dos [robôs](/automacao/robos). |
+
+Para os relatórios do funil, veja [Visão geral](/relatorios/visao-geral) e [Vendas & Pipeline](/relatorios/vendas).
+
+## Conversas
+
+Mostra um gráfico para cada métrica da conta:
+
+| Métrica | O que mede |
+| --- | --- |
+| **Conversas** | Total de conversas no período. |
+| **Mensagens Recebidas** | Total de mensagens enviadas pelos clientes. |
+| **Mensagens enviadas** | Total de mensagens enviadas pela equipe. |
+| **Tempo de Primeira Resposta** | Média do tempo até a primeira resposta da equipe. |
+| **Tempo de Resolução** | Média do tempo até a conversa ser resolvida. |
+| **Contagem de Resolução** | Total de conversas resolvidas. |
+| **Tempo de espera do cliente** | Quanto tempo o cliente esperou por cada resposta. |
+
+Nos gráficos de tempo, passe o mouse sobre um ponto para ver em quantas conversas a média se baseia.
+
+### Filtros
+
+- **Intervalo de data**: escolha entre **Últimos 7 dias**, **Últimos 30 dias**, **Últimos 3 meses**, **Últimos 6 meses**, **Ano passado**, **Esta semana**, **Este mês** ou **Intervalo de tempo personalizado** (informe **Data de início** e **Data final** e clique em **Aplicar**).
+- **Agrupar por**: **Dia**, **Semana**, **Mês** ou **Ano**. As opções mudam conforme o tamanho do período.
+- **Horários de funcionamento**: ative para calcular os tempos só dentro do horário de funcionamento definido nas caixas de entrada.
+
+### Exportar
+
+Clique em **Baixar relatórios de conversas** para baixar um arquivo CSV com o resumo do período escolhido. Se **Horários de funcionamento** estiver ativo, o arquivo segue o mesmo cálculo.
+
+## Agentes, Etiquetas, Caixa de Entrada e Time
+
+Esses quatro relatórios funcionam do mesmo jeito. A primeira tela é uma tabela com uma linha por agente, etiqueta, caixa de entrada ou time e estas colunas:
+
+- **Nº de Conversas**
+- **Tempo Médio de Primeira Resposta**
+- **Tempo Médio de Resolução**
+- **Tempo Médio de Espera do Cliente**
+- **Contagem de Resolução**
+
+Clique no nome de um item para abrir o relatório detalhado dele, com os mesmos gráficos e filtros do relatório de **Conversas**.
+
+Cada tabela tem o seu botão de exportação em CSV:
+
+| Relatório | Botão |
+| --- | --- |
+| **Agentes** | **Baixar relatórios de agentes** |
+| **Etiquetas** | **Baixar relatórios de etiquetas** |
+| **Caixa de Entrada** | **Baixar relatórios de entrada** |
+| **Time** | **Baixar relatórios de time** |
+
+## CSAT
+
+O CSAT mede a satisfação do cliente com uma pesquisa enviada no fim da conversa.
+
+### Ativar a pesquisa
+
+A pesquisa é ligada por caixa de entrada. Em **Canais**, abra as configurações da caixa de entrada e vá na aba **CSAT**. Lá você ativa **Habilitar CSAT** e define:
+
+- **Tipo de exibição**: como a nota aparece para o cliente.
+- **Mensagem**: o texto que acompanha a pesquisa.
+- **Regra de pesquisa**: envia a pesquisa só se a conversa **contém** ou **não contém** certas [etiquetas](/configuracoes/etiquetas).
+
+<Note>
+  No WhatsApp, ao salvar, o ChatClean cria um modelo de mensagem próprio para a pesquisa e envia para aprovação da Meta na categoria Utilidade. A Meta pode reclassificar o modelo como Marketing, conforme o texto. A aba **CSAT** mostra o status de aprovação, e as pesquisas só começam a sair depois que o modelo é aprovado. Veja [Modelos](/configuracoes/modelos-whatsapp).
+</Note>
+
+### O relatório
+
+Em **Relatórios → CSAT** você vê:
+
+- **Total de respostas**: quantas respostas foram coletadas.
+- **Pontuação de satisfação**: respostas positivas divididas pelo total de respostas, em porcentagem.
+- **Taxa de resposta**: respostas divididas pelo total de pesquisas enviadas, em porcentagem.
+- **Distribuição de avaliações**: quantas respostas houve em cada nota.
+
+Abaixo vem a tabela de respostas, com as colunas **Contato**, **Classificação**, **Comentário do feedback** e **Atendido por**.
+
+Filtre por período e use **Adicionar filtro** para filtrar por **Agente**, **Caixa de Entrada**, **Time** ou **Classificação**. Para exportar, clique em **Baixar relatórios de CSAT**.
+
+## Robôs
+
+Em **Relatórios → Robôs** você acompanha as conversas atendidas pelos [robôs](/automacao/robos):
+
+| Métrica | O que mede |
+| --- | --- |
+| **Nº de Conversas** | Total de conversas tratadas pelo robô. |
+| **Total de respostas** | Total de respostas enviadas pelo robô. |
+| **Taxa de resolução** | Conversas resolvidas pelo robô divididas pelas conversas tratadas por ele, em porcentagem. |
+| **Taxa de entrega** | Conversas passadas para agentes divididas pelas conversas tratadas pelo robô, em porcentagem. |
+
+Os gráficos abaixo mostram a **Contagem de Resolução** e a **Contagem de transferências** ao longo do período, com os mesmos filtros de período e agrupamento.

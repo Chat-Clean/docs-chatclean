@@ -1,0 +1,125 @@
+---
+title: "Regras de automação"
+description: "Crie regras que agem sozinhas nas conversas: um evento dispara a regra, as condições filtram e as ações são executadas."
+icon: "bolt"
+---
+
+Uma regra de automação faz por você tarefas repetitivas, como adicionar etiquetas, atribuir a conversa a um time ou enviar uma mensagem. Ela tem três partes:
+
+- **Evento**: o que dispara a regra.
+- **Condições**: o que a conversa precisa ter para a regra seguir.
+- **Ações**: o que a regra faz.
+
+As regras ficam em **Automação → Automação**, no menu lateral. Só administradores acessam essa tela.
+
+## Criar uma regra
+
+<Steps>
+  <Step title="Criar Automação">
+    Em **Automação → Automação**, clique em **Criar Automação**.
+  </Step>
+  <Step title="Nome e descrição">
+    Preencha **Nome da Regra** e **Descrição**. Os dois campos são obrigatórios.
+  </Step>
+  <Step title="Evento">
+    Em **Evento**, escolha o que dispara a regra. Veja a lista em [Eventos](#eventos).
+  </Step>
+  <Step title="Condições">
+    Em **Condições**, escolha o campo, o operador (como **Igual a**, **Diferente** ou **Contém**) e o valor. Use **Adicionar condição** para incluir mais de uma. A regra precisa de pelo menos uma condição.
+  </Step>
+  <Step title="Ações">
+    Em **Ações**, escolha o que a regra faz. Use **Adicionar ação** para incluir mais de uma. A regra precisa de pelo menos uma ação.
+  </Step>
+  <Step title="Salvar">
+    Clique em **Criar**. A regra já começa a valer.
+  </Step>
+</Steps>
+
+<Warning>
+  Trocar o **Evento** depois de preencher a regra apaga as condições e ações que você já adicionou, porque cada evento tem a sua própria lista de condições.
+</Warning>
+
+## Eventos
+
+| Evento | Quando dispara |
+| --- | --- |
+| **Conversa Criada** | Quando uma nova conversa começa. |
+| **Conversa Atualizada** | Quando algum dado da conversa muda, como status, agente, time ou etiquetas. |
+| **Conversa Aberta** | Quando a conversa passa para aberta. |
+| **Conversa Resolvida** | Quando a conversa é resolvida. |
+| **Mensagem Criada** | Quando uma mensagem é enviada ou recebida na conversa. |
+
+## Condições
+
+As condições disponíveis mudam conforme o evento. A maioria aparece em todos os eventos:
+
+- **Caixa de Entrada**
+- **E-mail**
+- **Número de Telefone**
+- **Empresa**
+- **Idioma da conversa**
+- **Prioridade**
+- **Etiquetas** (exceto em **Conversa Resolvida**)
+
+Outras dependem do evento:
+
+| Condição | Eventos |
+| --- | --- |
+| **Status** | **Conversa Criada**, **Conversa Atualizada**, **Mensagem Criada** |
+| **Agente atribuído** e **Time** | **Conversa Atualizada**, **Conversa Aberta**, **Conversa Resolvida**, **Mensagem Criada** |
+| **Idioma do navegador**, **Assunto do e-mail**, **País/região**, **Link de origem** | **Conversa Criada**, **Conversa Atualizada**, **Conversa Aberta**, **Conversa Resolvida** |
+| **Tipo da Mensagem**, **Mensagem Privada**, **Conteúdo da mensagem** | **Mensagem Criada** |
+
+Em **Tipo da Mensagem**, escolha **Mensagem Recebida** (enviada pelo cliente) ou **Mensagem de Saída** (enviada pela sua equipe).
+
+Os [atributos personalizados](/configuracoes/atributos-personalizados) de contato e de conversa também aparecem como condições, nos grupos **Atributos personalizados do contato** e **Atributos personalizados da conversa**.
+
+## Ações
+
+| Ação | O que faz |
+| --- | --- |
+| **Atribuir ao Agente** | Atribui a conversa a um agente. A opção **Último Agente que Respondeu** devolve a conversa a quem respondeu por último. |
+| **Atribuir um Time** | Atribui a conversa a um [time](/configuracoes/times). |
+| **Remove Assigned Agent** | Tira o agente atribuído. |
+| **Remover Time Atribuído** | Tira o time atribuído. |
+| **Adicionar uma Etiqueta** / **Remover uma Etiqueta** | Coloca ou tira [etiquetas](/configuracoes/etiquetas) da conversa. |
+| **Enviar um e-mail para o Time** | Envia um e-mail com a mensagem que você escrever para os membros dos times escolhidos. |
+| **Enviar uma transcrição por e-mail** | Envia o histórico da conversa para um e-mail. A opção **Usar o e-mail do contato** usa o e-mail cadastrado do cliente. |
+| **Silenciar Conversa** | Silencia a conversa. |
+| **Adiar Conversa** | Adia a conversa. |
+| **Resolver Conversa** | Resolve a conversa. |
+| **Abrir conversa** | Reabre a conversa. |
+| **Marcar conversa como pendente** | Muda o status para pendente. |
+| **Enviar evento de Webhook** | Envia os dados da conversa para a URL que você informar. |
+| **Enviar Anexo** | Envia um arquivo ao cliente. |
+| **Enviar Mensagem** | Envia uma mensagem ao cliente. |
+| **Adicionar uma Nota Privada** | Adiciona uma nota que só a sua equipe vê. |
+| **Alterar Prioridade** | Define a prioridade: **Nenhuma**, **Baixa**, **Média**, **Alta** ou **Urgente**. |
+
+<Tip>
+  No texto de **Enviar Mensagem**, digite `{{` para inserir variáveis, como `{{contact.name}}` (nome do contato) ou `{{agent.name}}` (nome do agente). O mesmo vale para as [Respostas Prontas](/automacao/respostas-prontas).
+</Tip>
+
+## Gerenciar as regras
+
+A lista mostra o **Nome**, se a regra está **Ativo** e quando foi **Criado em**. Em cada regra você pode:
+
+- **Ativar ou desativar**: use a chave da coluna **Ativo** e confirme com **Sim**. Uma regra desativada fica salva, mas não age.
+- **Editar**: abre **Editar regra de automação**. Salve com **Atualizar**.
+- **Duplicar**: cria uma cópia da regra para você ajustar.
+- **Excluir**: apaga a regra depois da confirmação.
+
+## Exemplos
+
+<AccordionGroup>
+  <Accordion title="Mandar conversas do WhatsApp para o time de vendas">
+    - **Evento**: **Conversa Criada**
+    - **Condição**: **Caixa de Entrada** **Igual a** caixa do WhatsApp
+    - **Ação**: **Atribuir um Time** → Vendas
+  </Accordion>
+  <Accordion title="Marcar como urgente quando o cliente falar em cancelamento">
+    - **Evento**: **Mensagem Criada**
+    - **Condições**: **Tipo da Mensagem** **Igual a** **Mensagem Recebida** e **Conteúdo da mensagem** **Contém** "cancelar"
+    - **Ações**: **Alterar Prioridade** → **Urgente** e **Adicionar uma Etiqueta** → cancelamento
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,74 @@
+---
+title: "Macros"
+description: "Salve uma sequência de ações e execute tudo de uma vez numa conversa, com um clique."
+icon: "list-check"
+---
+
+Uma macro é um conjunto de ações salvas, como adicionar uma etiqueta, enviar uma mensagem e resolver a conversa. Em vez de fazer cada passo à mão, o agente executa a macro e as ações rodam na ordem em que foram montadas.
+
+As macros ficam em **Automação → Macros**, no menu lateral. Administradores e agentes podem criar macros.
+
+## Criar uma macro
+
+<Steps>
+  <Step title="Nova macro">
+    Em **Automação → Macros**, clique em **Adicionar uma nova macro**.
+  </Step>
+  <Step title="Nome">
+    Preencha **Nome da macro**.
+  </Step>
+  <Step title="Ações">
+    Entre **Inicio do Fluxo** e **Fim do Fluxo**, adicione as ações. Para mudar a ordem, arraste cada ação pela alça ao lado dela.
+  </Step>
+  <Step title="Visibilidade">
+    Em **Visibilidade da Macro**, escolha **Publico** ou **Privada**.
+  </Step>
+  <Step title="Salvar">
+    Clique em **Salvar macro**.
+  </Step>
+</Steps>
+
+### Ações disponíveis
+
+- **Atribuir um Time** e **Atribuir um Agente**
+- **Remover Time Atribuído** e **Remove Assigned Agent**
+- **Adicionar uma Etiqueta** e **Remover uma Etiqueta**
+- **Enviar uma Mensagem** e **Enviar Anexo**
+- **Adicionar uma Nota Privada**
+- **Alterar Prioridade**
+- **Enviar uma transcrição por e-mail**
+- **Silenciar Conversa**, **Adiar Conversa** e **Resolver Conversa**
+- **Enviar evento de Webhook**
+
+## Visibilidade
+
+| Opção | Quem vê e executa | Quem edita e exclui |
+| --- | --- | --- |
+| **Publico** | Todos os agentes da conta. | Só administradores. |
+| **Privada** | Só quem criou. | Só quem criou. |
+
+Só administradores podem criar macros públicas.
+
+## Executar uma macro
+
+### Numa conversa
+
+<Steps>
+  <Step title="Abra a conversa">
+    No painel lateral da conversa, abra a seção **Macros**.
+  </Step>
+  <Step title="Confira, se quiser">
+    Use **Pré-visualizar Macro** para ver as ações antes de rodar.
+  </Step>
+  <Step title="Execute">
+    Clique em **Executar**. As ações rodam na ordem da macro.
+  </Step>
+</Steps>
+
+### Em várias conversas
+
+Na lista de conversas, selecione as conversas e use **Executar macro** nas ações em massa. Confirme para colocar a macro na fila de todas as conversas selecionadas.
+
+## Gerenciar as macros
+
+A lista mostra **Nome**, **Criada por**, **Ultima atualização por** e **Visibilidade**. Use **Editar macro** para mudar uma macro e **Excluir macro** para apagá-la.

@@ -1,0 +1,63 @@
+---
+title: "IA do pipeline"
+description: "Deixe a IA sugerir o próximo passo, preencher campos ao mover e explicar a temperatura de cada negócio, com teto de gasto mensal."
+icon: "wand-magic-sparkles"
+---
+
+A IA do pipeline lê o negócio e a conversa com o contato e ajuda o time de vendas em três pontos. Ela usa a chave de IA da ChatClean: você escolhe o que ela faz e quanto pode gastar por mês.
+
+<Info>
+  Só administradores configuram a IA do pipeline. A configuração vale para a conta inteira, mesmo sendo aberta pelo menu de um pipeline.
+</Info>
+
+## Ligar a IA
+
+<Steps>
+  <Step title="Abra a configuração">
+    No [Funil de vendas](/vendas/funil), abra o menu do pipeline e escolha **IA do pipeline**.
+  </Step>
+  <Step title="Defina o teto">
+    Em **Teto de gasto por mês (R$)**, informe um valor maior que zero. Sem teto, nenhuma das três opções liga.
+  </Step>
+  <Step title="Escolha o que a IA faz">
+    Ligue as opções que quiser (veja abaixo).
+  </Step>
+  <Step title="Salve">
+    Clique em **Salvar**.
+  </Step>
+</Steps>
+
+| Opção | O que faz |
+| --- | --- |
+| **Sugerir o próximo passo** | Mostra no negócio o que fazer em seguida com o cliente. |
+| **Preencher campos ao mover** | Quando a oportunidade muda de etapa, preenche os campos exigidos a partir da conversa. |
+| **Explicar o selo de temperatura** | Mostra o quanto a oportunidade está quente e por quê. |
+
+## Teto de gasto
+
+A janela mostra o **Gasto neste mês**. Quando o gasto chega ao teto, a IA para até o mês que vem: "O teto foi atingido: a IA para até o mês que vem." Para continuar no mesmo mês, aumente o teto.
+
+## Próximo passo e temperatura
+
+A IA analisa o negócio com os dados dele (etapa, valor, responsável, data prevista, campos, atividades pendentes e histórico recente) e as últimas mensagens da conversa do negócio. Se o negócio não tem conversa, ela usa a conversa mais recente do contato.
+
+O resultado aparece no bloco **IA do pipeline**, nos detalhes do negócio:
+
+- **Temperatura**: **Frio**, **Morno** ou **Quente**, com uma frase curta explicando o motivo. O selo também aparece no topo dos detalhes e, se você escolher **Temperatura** em **Personalizar cartão**, no cartão do quadro. Passe o mouse no selo para ver o motivo.
+- **Próximo passo sugerido**: uma ação prática para o vendedor. **Criar atividade** abre uma nova atividade já com a sugestão.
+- **Analisado em**: quando foi a última análise.
+
+### Quando a análise roda
+
+- Cerca de 10 minutos depois de uma mensagem do contato, em cada negócio aberto dele. Se o contato continuar escrevendo, a IA espera ele parar.
+- Quando o negócio muda de etapa.
+- Quando você clica em **Atualizar análise**, nos detalhes do negócio. O botão precisa de um contato vinculado, e a IA precisa de uma conversa com mensagens. Entre dois cliques, aguarde alguns segundos.
+
+## Preencher campos ao mover
+
+Quando um negócio vai para uma etapa que exige campos preenchidos (veja [O que cada etapa exige](/vendas/funil#o-que-cada-etapa-exige)), a IA lê a conversa e preenche os campos vazios antes da conferência da etapa.
+
+- Ela só usa o que o cliente disse claramente nas mensagens. Se a conversa não diz, o campo fica vazio.
+- Valores que não cabem no tipo do campo (por exemplo, texto num campo de número) são descartados.
+- Se ainda faltar algum campo, a etapa avisa o que falta e o negócio não é movido.
+- Cada campo preenchido pela IA aparece no **Histórico** do negócio, por exemplo "IA preencheu Orçamento com “R$ 5.000”".

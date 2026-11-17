@@ -1,0 +1,54 @@
+---
+title: "Times"
+description: "Agrupe agentes por área, como Vendas ou Suporte, atribua conversas ao time e deixe o ChatClean distribuir entre os membros."
+icon: "people-group"
+---
+
+Um time reúne agentes com a mesma responsabilidade, como Vendas ou Suporte. Você atribui uma conversa ao time e todos os membros acompanham. Um agente pode estar em vários times.
+
+Os times ficam em **Configurações → Times**. Só administradores acessam essa tela.
+
+## Criar um time
+
+<Steps>
+  <Step title="Criar novo time">
+    Em **Configurações → Times**, clique em **Criar novo time**.
+  </Step>
+  <Step title="Detalhes">
+    Preencha **Nome do Time** e **Descrição do time**. Deixe marcado **Permitir atribuição automática para este time.** se quiser que o ChatClean distribua as conversas entre os membros (veja abaixo). Clique em **Criar novo time**.
+  </Step>
+  <Step title="Agentes">
+    Selecione os agentes do time, ou use **Selecionar todos os agentes**, e clique em **Adicionar agentes**.
+  </Step>
+  <Step title="Finalizar">
+    Clique em **Finalizar**.
+  </Step>
+</Steps>
+
+## Atribuição dentro do time
+
+Quando uma conversa é atribuída a um time e a opção **Permitir atribuição automática para este time.** está ligada, o ChatClean escolhe um agente do time para a conversa:
+
+- Só entram na escolha os membros do time que também fazem parte da caixa de entrada da conversa.
+- Só agentes com a disponibilidade **Online** recebem conversas.
+- A distribuição é em rodízio entre os agentes que atendem a essas condições.
+
+Se a conversa já tinha um agente que não é membro do time, esse agente sai da conversa. Com a opção desligada, o ChatClean não escolhe ninguém: a conversa fica com o time até um membro assumir.
+
+<Tip>
+  Para mandar conversas para um time sem fazer isso à mão, use uma [regra de automação](/automacao/regras) com a ação **Atribuir um Time**.
+</Tip>
+
+Os times também aparecem no menu lateral, em **Atendimentos → Times**, para ver só as conversas de cada time. O desempenho de cada time fica no relatório **Time**, em [Relatórios de atendimento](/relatorios/atendimento).
+
+## Editar um time
+
+Na lista, clique em **Editar time**. A edição tem três etapas:
+
+- **Detalhes do time**: nome, descrição e a atribuição automática. Salve com **Atualizar time**.
+- **Alterar agentes**: inclua ou retire membros e clique em **Atualizar agentes no time**.
+- **Finalizar**.
+
+## Excluir um time
+
+Clique em **Excluir** e digite o nome do time para confirmar. As conversas que estavam atribuídas a ele ficam sem time.

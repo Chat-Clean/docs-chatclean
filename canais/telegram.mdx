@@ -1,0 +1,48 @@
+---
+title: Telegram
+description: "Conecte um bot do Telegram ao ChatClean usando o token do bot."
+icon: "telegram"
+---
+
+O canal Telegram liga um bot do Telegram ao ChatClean. Quem escreve para o bot vira uma conversa em **Atendimentos → Conversas**, e as respostas da equipe saem pelo bot.
+
+## Criar o bot no Telegram
+
+<Steps>
+  <Step title="Abra o BotFather">
+    No Telegram, abra o **@BotFather**, o bot oficial do Telegram para criar bots.
+  </Step>
+  <Step title="Crie o bot">
+    Envie `/newbot` e siga as perguntas: o nome do bot e o nome de usuário, que precisa terminar em `bot`.
+  </Step>
+  <Step title="Copie o token">
+    Ao final, o BotFather envia o token do bot. Copie esse token.
+  </Step>
+</Steps>
+
+<Warning>
+  O token dá controle total sobre o bot. Não compartilhe o token fora do ChatClean.
+</Warning>
+
+## Conectar no ChatClean
+
+<Steps>
+  <Step title="Escolha o Telegram">
+    Em **Canais**, clique em **Adicionar canal** e escolha **Telegram**.
+  </Step>
+  <Step title="Cole o token">
+    Em **Bot Token**, cole o token que o BotFather enviou.
+  </Step>
+  <Step title="Crie o canal">
+    Clique em **Criar canal do Telegram**. O ChatClean configura o recebimento de mensagens do bot automaticamente. Depois, escolha os agentes e clique em **Adicionar agentes**.
+  </Step>
+  <Step title="Teste">
+    A tela final mostra um código QR. Escaneie com o celular para abrir o bot no Telegram e mandar uma mensagem de teste.
+  </Step>
+</Steps>
+
+## Responder
+
+No Telegram, quem começa a conversa é o contato: um bot não consegue mandar a primeira mensagem para alguém. Divulgue o link do bot (`https://t.me/` seguido do nome de usuário do bot) para os clientes chegarem até ele.
+
+As configurações do canal (agentes, horário de funcionamento, saudação, CSAT, roteamento de conversa) são as mesmas dos outros canais. Veja [Canais](/canais/visao-geral).

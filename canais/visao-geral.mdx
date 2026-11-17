@@ -1,0 +1,152 @@
+---
+title: Canais
+description: "Conecte WhatsApp, Instagram, Facebook, chat do site, e-mail e outros canais, e ajuste agentes, horário de atendimento, saudação e pesquisa de satisfação de cada um."
+icon: "tower-cell"
+---
+
+Um canal é o meio que o seu cliente usa para falar com você: WhatsApp, Instagram, e-mail, chat do site e outros. Cada canal conectado vira uma caixa de entrada própria. As conversas que chegam por ele aparecem em **Atendimentos → Conversas**, e só os agentes adicionados ao canal veem essas conversas.
+
+## A tela Canais
+
+A tela **Canais** fica no menu lateral, logo abaixo de **Relatórios**. Só administradores acessam essa tela.
+
+Ela lista os canais da conta, com o ícone colorido de cada rede e a quantidade total no topo. Use a busca para encontrar um canal pelo nome, pelo tipo ou pelo identificador. Em cada linha:
+
+- O botão **Configurações** abre os ajustes do canal.
+- O botão **Excluir** remove o canal. Para confirmar, digite o nome do canal e clique em **Sim, excluir**.
+
+## Tipos de canal
+
+Estes são os cartões da tela **Escolha um canal**:
+
+| Cartão | O que conecta |
+| --- | --- |
+| **Site** | Um chat ao vivo (widget) no seu site. |
+| **Facebook** | As mensagens do Messenger da sua página do Facebook. |
+| **WhatsApp** | Um número do WhatsApp Business pela API oficial da Meta. |
+| **SMS** | Um número de SMS da Twilio ou da Bandwidth. |
+| **E-mail** | Uma caixa de e-mail do Gmail, do Outlook ou de outro provedor. |
+| **API** | Um canal próprio, ligado ao seu sistema por API e webhook. |
+| **Telegram** | Um bot do Telegram. |
+| **Line** | Um canal do LINE. |
+| **Instagram** | As mensagens diretas de uma conta profissional do Instagram. |
+
+## Adicionar um canal
+
+<Steps>
+  <Step title="Abra a criação de canal">
+    Em **Canais**, clique em **Adicionar canal**.
+  </Step>
+  <Step title="Escolha o tipo">
+    Na tela **Escolha um canal**, clique no cartão do canal. Cada tipo tem os próprios passos de conexão, descritos na página do canal.
+  </Step>
+  <Step title="Crie a caixa de entrada">
+    Faça a autenticação ou preencha os dados pedidos e crie a caixa de entrada.
+  </Step>
+  <Step title="Adicione os agentes">
+    Na etapa **Agentes**, escolha em **Escolha agentes para a caixa de entrada** quem vai atender o canal e clique em **Adicionar agentes**. É preciso adicionar pelo menos um agente.
+  </Step>
+  <Step title="Conclua">
+    A tela **Sua caixa de entrada está pronta!** confirma a criação. Alguns canais mostram ali um código QR para testar ou um código para copiar. Clique em **Leva-me lá** para ver as conversas ou em **Mais configurações** para ajustar o canal.
+  </Step>
+</Steps>
+
+<Warning>
+  Só os agentes adicionados ao canal veem e respondem as conversas dele. Isso vale também para administradores: se você quer ver as conversas de um canal, adicione-se como agente nele.
+</Warning>
+
+## Configurações de um canal
+
+Em **Canais**, clique em **Configurações** na linha do canal. As abas mudam conforme o tipo:
+
+| Aba | Canais | Para que serve |
+| --- | --- | --- |
+| **Configurações** | Todos | Nome, imagem, saudação e preferências do canal. |
+| **Agentes** | Todos | Quem atende o canal e a atribuição automática. |
+| **Horário de funcionamento** | Todos | Horário de atendimento e mensagem fora do horário. |
+| **CSAT** | Todos | Pesquisa de satisfação ao resolver a conversa. |
+| **Formulário Chat Pré** | Site | Dados pedidos ao visitante antes do chat. |
+| **Configuração** | Site, WhatsApp, API, E-mail (outros provedores), Twilio, Line | Dados técnicos do canal: script, webhook, IMAP e SMTP e outros. |
+| **Configuração do Bot** | Todos | Liga um robô ao canal. Veja [Robôs](/automacao/robos). |
+| **Saúde da conta** | WhatsApp, SMS da Twilio | Situação do número e da conta no provedor. |
+
+### Configurações
+
+- **Imagem do Canal**: a foto que identifica o canal.
+- **Nome da Caixa de Entrada** (ou **Nome do site**, no canal Site): como o canal aparece para a equipe.
+- **Roteamento de Conversa**: o que acontece quando um contato volta a escrever depois que a conversa foi resolvida. **Reabrir a mesma conversa** reabre a conversa anterior. **Criar novas conversas** abre uma conversa nova. Aparece no WhatsApp, Instagram, Facebook, SMS, Telegram, Line e API.
+- **Preferências do Canal** → **Ativar saudação do canal**: envia a **Mensagem de saudação do canal** automaticamente quando um contato escreve pela primeira vez numa conversa nova, antes de qualquer resposta da equipe.
+
+Clique em **Atualizar** para salvar.
+
+### Agentes
+
+Em **Agentes**, adicione ou remova os agentes do canal e clique em **Atualizar**.
+
+Em **Atribuição de conversa**, ligue a atribuição automática para que cada conversa nova seja entregue a um agente do canal. A distribuição segue as regras padrão: conversas mais antigas primeiro, em rodízio entre os agentes.
+
+### Horário de funcionamento
+
+<Steps>
+  <Step title="Ligue o horário">
+    Ative **Permitir a disponibilidade de negócios para essa caixa de entrada**.
+  </Step>
+  <Step title="Escreva a mensagem fora do horário">
+    No campo **Mensagem indisponível para visitantes**, escreva o que o contato recebe quando escreve fora do horário.
+  </Step>
+  <Step title="Defina o fuso e os dias">
+    Escolha o fuso em **Selecionar fuso horário**. Em **Definir horas semanais**, marque os dias de atendimento e defina o horário de abertura e de fechamento, ou marque **O dia todo**. Dias desmarcados ficam como **Indisponível**.
+  </Step>
+  <Step title="Salve">
+    Clique em **Atualizar configurações do horário comercial**.
+  </Step>
+</Steps>
+
+Fora do horário, o canal responde automaticamente com a mensagem indisponível quando o contato escreve. Ela é enviada no máximo uma vez por dia em cada conversa e não sai se um agente respondeu a conversa nos últimos 5 minutos. No chat do site, o widget também mostra o horário de atendimento.
+
+### CSAT
+
+A pesquisa de satisfação (CSAT) é enviada ao contato quando a conversa é resolvida, uma vez por conversa.
+
+1. Ative **Habilitar CSAT**.
+2. Em **Tipo de exibição**, escolha a avaliação por emoji ou por estrelas (fora do WhatsApp).
+3. Em **Mensagem**, escreva o texto que acompanha a pesquisa.
+4. Em **Regra de pesquisa**, se quiser, limite o envio: "Enviar a pesquisa se a conversa **contém** (ou **não contém**) qualquer uma das etiquetas" escolhidas.
+5. Clique em **Atualizar**.
+
+No WhatsApp, a pesquisa é enviada como um modelo de mensagem. Ao salvar, o ChatClean cria esse modelo e o envia à Meta para aprovação na categoria Utilidade, com os campos **Texto do botão** e **Idioma**. A tela mostra a situação do modelo, como **Aguardando aprovação do WhatsApp** ou **Aprovado pelo WhatsApp**. A Meta pode reclassificar o modelo como Marketing, conforme o conteúdo.
+
+Nos outros canais, a pesquisa só sai se a conversa ainda estiver dentro da janela de resposta do canal.
+
+## Reconectar um canal
+
+Quando a conexão com a rede expira, o canal mostra o aviso "Sua caixa de entrada está desconectada. Você não receberá novas mensagens até reautorizar." Clique em **Clique aqui para reconectar.** e faça o login de novo na rede.
+
+## Páginas dos canais
+
+<Columns cols={2}>
+  <Card title="WhatsApp" icon="whatsapp" href="/canais/whatsapp">
+    API oficial pelo cadastro incorporado da Meta
+  </Card>
+  <Card title="Instagram" icon="instagram" href="/canais/instagram">
+    Mensagens diretas de uma conta profissional
+  </Card>
+  <Card title="Facebook" icon="facebook" href="/canais/facebook">
+    Mensagens do Messenger da sua página
+  </Card>
+  <Card title="Site" icon="globe" href="/canais/site">
+    Chat ao vivo no seu site
+  </Card>
+  <Card title="E-mail" icon="envelope" href="/canais/email">
+    Gmail, Outlook ou outro provedor
+  </Card>
+  <Card title="Telegram" icon="telegram" href="/canais/telegram">
+    Atendimento por um bot do Telegram
+  </Card>
+  <Card title="SMS" icon="message-sms" href="/canais/sms">
+    Twilio ou Bandwidth
+  </Card>
+  <Card title="API" icon="code" href="/canais/api">
+    Canal próprio para integrações
+  </Card>
+</Columns>
