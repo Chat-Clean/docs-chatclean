@@ -14,7 +14,7 @@ icon: "chart-pie"
 
 Escolha **7 dias** (o padrão), **30 dias** ou **90 dias**. O período termina hoje e usa o fuso horário do seu navegador.
 
-**Período anterior** compara cada número com os mesmos dias logo antes: os indicadores mostram a variação, e o gráfico de volume ganha a linha do período anterior. O indicador **Conversas** mostra a variação sempre.
+Cada indicador mostra a variação em relação aos mesmos dias logo antes, num selo verde quando melhorou e vermelho quando piorou. **Período anterior** desenha o período anterior como uma linha tracejada nos gráficos **Volume de conversas** e **Vendas ganhas**.
 
 ## Indicadores
 
@@ -25,6 +25,8 @@ Escolha **7 dias** (o padrão), **30 dias** ou **90 dias**. O período termina h
 | **Vendas ganhas** | Valor dos negócios ganhos no período e quantos foram. |
 | **Conversão** | Dos negócios criados no período, quantos já foram ganhos (lead → ganho). Sem negócios criados no período, aparece **Sem dados**. |
 
+**Conversas** e **Vendas ganhas** têm um minigráfico com a evolução do período.
+
 Ao lado dos indicadores, dois destaques:
 
 - **Canal líder**: o tipo de canal com mais conversas no período e a parte dele no total.
@@ -34,10 +36,12 @@ Ao lado dos indicadores, dois destaques:
 
 | Bloco | O que mostra |
 | --- | --- |
-| **Volume de conversas** | Conversas criadas por dia, com o total e a média por dia. Use **Ver como tabela** para ver os números. |
-| **Por canal** | Conversas do período por tipo de canal de entrada: WhatsApp, Instagram, Messenger, Site, E-mail, Telegram, SMS, API e outros que a conta tiver. |
+| **Volume de conversas** | Conversas criadas por dia, em gráfico de área, com o total e a média por dia. Passe o mouse para ver o dia. Use **Ver como tabela** para ver os números. |
+| **Por canal** | Conversas do período por tipo de canal de entrada (WhatsApp, Instagram, Messenger, Site, E-mail, Telegram, SMS, API e outros que a conta tiver), num gráfico de rosca com o total no meio. |
+| **Horários de pico** | Conversas do período por dia da semana e hora, num mapa de calor: quanto mais escura a célula, mais conversas. Passe o mouse para ver o número. |
+| **Desempenho por atendente** | Ranking por conversas do período, com uma barra para cada atendente e o valor ganho. |
+| **Vendas ganhas** | Valor ganho acumulado no período, dia a dia. |
 | **Pipeline por etapa** | Os negócios abertos em cada etapa do pipeline padrão, com quantidade e valor. Sem pipeline, o bloco pede para criar um. |
-| **Desempenho por atendente** | Ranking por conversas do período e valor ganho de cada atendente. |
 
 O pipeline padrão é o marcado como **Padrão** no [Funil de vendas](/vendas/funil).
 
@@ -59,8 +63,18 @@ O pipeline padrão é o marcado como **Padrão** no [Funil de vendas](/vendas/fu
 
 Os filtros mudam só os números de conversas. A exceção é **Responsável**: ele também filtra os números de vendas (**Vendas ganhas**, **Conversão**, **Pipeline por etapa** e o valor ganho por atendente).
 
+## Ações dos gráficos
+
+No canto de cada gráfico há três botões:
+
+| Botão | O que faz |
+| --- | --- |
+| **Tela cheia** | Abre o gráfico ocupando a tela, maior. Feche pelo mesmo botão (**Sair da tela cheia**) ou pela tecla Esc. |
+| **Baixar gráfico em PNG** | Baixa uma imagem do gráfico como ele aparece na tela. |
+| **Exportar dados (CSV)** | Baixa os números do gráfico em CSV, para abrir numa planilha. |
+
 ## Exportar
 
-**Baixar CSV** baixa o relatório do período e dos filtros atuais.
+**Baixar CSV**, no topo, baixa o relatório inteiro do período e dos filtros atuais.
 
 Para análises mais detalhadas de vendas, veja [Vendas & Pipeline](/relatorios/vendas). Para atendimento, veja [Relatórios de atendimento](/relatorios/atendimento).

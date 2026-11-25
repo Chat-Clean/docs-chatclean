@@ -13,7 +13,7 @@ icon: "chart-line"
 ## Período, comparação e filtros
 
 - **Período**: **7 dias**, **30 dias** (o padrão) ou **90 dias**, terminando hoje, no fuso horário do seu navegador.
-- **Período anterior**: compara com os mesmos dias logo antes. Os indicadores mostram a variação ("+12% vs. anterior") e o gráfico de ganhos ganha a linha do período anterior. O indicador **Ganho no período** mostra a variação sempre.
+- **Período anterior**: os indicadores mostram sempre a variação em relação aos mesmos dias logo antes, num selo verde quando melhorou e vermelho quando piorou. O botão **Período anterior** desenha o período anterior como uma linha tracejada no gráfico **Ganhos ao longo do tempo**.
 - **Filtrar**: **Pipeline**, **Etapa**, **Responsável**, **Valor (R$)**, **Contato**, **Empresa**, **Título**, **Canal**, **Fechado em**, **Criado em** e **Entrou na etapa**. Os filtros valem para todo o relatório. **Canal** é o canal por onde chegou a conversa que deu origem ao negócio. Ao trocar o filtro **Pipeline**, o filtro **Etapa** sai.
 
 Sem o filtro **Pipeline**, os indicadores e a maioria dos blocos somam todos os pipelines da conta. Os blocos de etapas (**Pipeline**, **Conversão entre etapas**, **Onde o negócio se perde** e **Estagnação por etapa**) usam o pipeline do filtro ou, sem filtro, o pipeline padrão.
@@ -36,17 +36,17 @@ Sem o filtro **Pipeline**, os indicadores e a maioria dos blocos somam todos os 
 | --- | --- |
 | **Indicadores** | Os indicadores acima. |
 | **Pipeline** | Negócios abertos por etapa, com contagem e valor. Passe o mouse para ver a parte de cada etapa no total e em relação à primeira etapa. |
-| **Ganhos ao longo do tempo** | Valor ganho por dia; em 90 dias, por semana. Use **Ver como tabela** para ver os números. |
+| **Ganhos ao longo do tempo** | Valor ganho acumulado no período, em gráfico de área: por dia, ou por semana em 90 dias. Use **Ver como tabela** para ver o valor de cada dia ou semana. |
 | **Conversão entre etapas** | Dos negócios criados no período, quantos chegaram a cada etapa (**Chegaram**) e quantos seguiram para a próxima (**Seguiram para a próxima**). Etapa pulada não conta, então uma etapa pode ter mais negócios que a anterior. A etapa com a **maior queda** fica marcada. |
-| **Por responsável** | Ranking de vendas no período: **Negócios** criados, **Ganhos** e **Valor**. |
+| **Por responsável** | Ranking de vendas no período, com uma barra pelo valor ganho de cada responsável e quantos ganhos de quantos negócios. |
 | **Por origem** | Leads criados no período por origem, com **Ganhos**, **Perdidos**, **Conversão** e **Valor**. |
 | **Por canal** | O mesmo, por canal de entrada. |
 | **Por produto** | **Unidades** e **Receita** de cada produto nos negócios ganhos. |
-| **Distribuição de ganhos por origem** | A parte de cada origem no valor ganho. |
+| **Distribuição de ganhos por origem** | A parte de cada origem no valor ganho, num gráfico de rosca com o total no meio. |
 | **Por empresa** | As 10 empresas que mais renderam no período (**Ganho no período**) e o que ainda está aberto com cada uma (**Em jogo**). |
-| **Ganhos por motivo** | O que fez cada negócio fechar: **Negócios**, **Participação** e **Valor** por motivo. |
+| **Ganhos por motivo** | O que fez cada negócio fechar: um gráfico de rosca e a tabela com **Negócios**, **Participação** e **Valor** por motivo. |
 | **Negócios ganhos** | Cada venda do período, com **Responsável**, **Produtos**, **Valor**, quanto **Levou** e **Fechado em**. |
-| **Perdas por motivo** | Quantos negócios cada motivo de perda levou. |
+| **Perdas por motivo** | Quantos negócios cada motivo de perda levou, com gráfico de rosca e tabela. |
 | **Perdas por responsável** | Quem mais perde, em proporção do que fechou: **Perdidos**, **Encerrados**, **Taxa de perda** e **Valor perdido**. |
 | **Onde o negócio se perde** | Em que etapa a venda morreu: **Perdidos**, **% das perdas** e **Valor perdido** por etapa. |
 | **Negócios perdidos** | Cada perda do período, com a etapa, o **Motivo** e a **Justificativa**. |
@@ -69,6 +69,16 @@ Em **Blocos**, escolha o que aparece e em que ordem:
 
 A escolha é sua: cada pessoa vê os blocos na própria ordem.
 
+## Ações dos gráficos
+
+No canto de cada bloco com gráfico há três botões:
+
+| Botão | O que faz |
+| --- | --- |
+| **Tela cheia** | Abre o gráfico ocupando a tela, maior. Feche pelo mesmo botão (**Sair da tela cheia**) ou pela tecla Esc. |
+| **Baixar gráfico em PNG** | Baixa uma imagem do gráfico como ele aparece na tela. |
+| **Exportar dados (CSV)** | Baixa os números do gráfico em CSV, para abrir numa planilha. |
+
 ## Exportar
 
-**Baixar CSV** baixa o relatório do período e dos filtros atuais.
+**Baixar CSV**, no topo, baixa o relatório inteiro do período e dos filtros atuais.

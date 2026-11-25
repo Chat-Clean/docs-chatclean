@@ -12,13 +12,13 @@ icon: "filter"
 
 ## Pipelines
 
-A coluna **Pipelines**, à esquerda do quadro, lista os pipelines da conta. Use **Buscar pipeline** para encontrar um pelo nome e **Recolher pipelines** para ganhar espaço. Os pipelines com **Grupo** aparecem reunidos sob o nome do grupo.
+Para trocar de pipeline, use o seletor ao lado do botão **Novo …**, no topo do quadro. Ele mostra o pipeline aberto; ao clicar, lista os pipelines da conta com a quantidade de itens em aberto e o selo **Padrão**. Use **Buscar pipeline** para encontrar um pelo nome. Os pipelines com **Grupo** aparecem reunidos sob o nome do grupo.
 
 ### Criar um pipeline
 
 <Steps>
   <Step title="Abra o formulário">
-    Clique em **Adicionar pipeline**, no pé da lista. Se a conta ainda não tem pipeline, use **Criar pipeline** no meio da tela.
+    Abra o seletor de pipeline e clique em **Adicionar pipeline**, no pé da lista. Se a conta ainda não tem pipeline, use **Criar pipeline** no meio da tela.
   </Step>
   <Step title="Preencha os dados">
     | Campo | O que faz |
@@ -30,11 +30,14 @@ A coluna **Pipelines**, à esquerda do quadro, lista os pipelines da conta. Use 
     | **Como chamar cada item** | O nome dos cartões: **Padrão (negócio)**, **Cliente**, **Caso**, **Processo** ou **Personalizado**. |
     | **Negócio parado após (dias)** | Prazo, de 1 a 365 dias, que cada etapa nova recebe. O padrão é 7. |
   </Step>
+  <Step title="Monte as etapas">
+    Em **Etapas**, **Novo contato** vem sempre em primeiro. Clique em **Adicionar etapa** para cada etapa que você quer, dê um nome (de 2 a 50 caracteres, sem repetir outro nome do pipeline) e escolha a cor. Arraste as etapas para mudar a ordem; o **×** remove uma etapa antes de criar o pipeline.
+  </Step>
   <Step title="Nomeie as colunas de fechamento">
     Em **Colunas de fechamento**, dê nome e cor às colunas de ganho e de perda. Os nomes padrão são **Ganho** e **Perda**.
   </Step>
   <Step title="Crie">
-    Clique em **Criar pipeline**. O pipeline nasce com três colunas: **Novo contato**, a coluna de ganho e a coluna de perda.
+    Clique em **Criar pipeline**. O pipeline nasce com **Novo contato**, as etapas que você adicionou, na ordem escolhida, e as colunas de ganho e de perda.
   </Step>
 </Steps>
 
@@ -50,22 +53,20 @@ O nome escolhido aparece no botão **Novo …**, nos contadores, no cartão e no
 
 O primeiro pipeline da conta vira o padrão e ganha o selo **Padrão**. O pipeline padrão é o que a [entrada de leads](/vendas/entrada-de-leads) usa e o que o relatório [Visão geral](/relatorios/visao-geral) mostra.
 
-Para trocar, abra o menu do pipeline na lista e escolha **Definir como padrão**. Sempre existe um pipeline padrão: não dá para desligar o padrão sem escolher outro.
+Para trocar, abra o pipeline que vai ser o padrão, clique em **Configurar pipeline** (o ícone de engrenagem ao lado do nome) e escolha **Definir como padrão**. Sempre existe um pipeline padrão: não dá para desligar o padrão sem escolher outro.
 
 ### Editar e excluir
 
-Abra o menu **Opções do pipeline**, ao lado do nome do pipeline na lista. O menu tem:
+Abra o pipeline e clique em **Configurar pipeline**, o ícone de engrenagem ao lado do nome, no topo do quadro. O menu tem:
 
 | Opção | O que abre |
 | --- | --- |
-| **Editar pipeline** | Os dados do pipeline, a ordem das etapas e os nomes e cores das colunas de fechamento. |
+| **Editar pipeline** | Os dados do pipeline, as etapas (adicionar e mudar a ordem) e os nomes e cores das colunas de fechamento. |
 | **Personalizar cartão** | Os campos extras do cartão. Veja "Personalizar o cartão", mais abaixo. |
 | **Entrada de leads** | A criação automática de negócios. Veja [Entrada de leads](/vendas/entrada-de-leads). |
 | **IA do pipeline** | Os recursos de IA. Veja [IA do pipeline](/vendas/ia-do-pipeline). |
 | **Definir como padrão** | Torna este pipeline o padrão. |
 | **Excluir pipeline** | Exclui o pipeline e as etapas dele. |
-
-O botão **Configurar pipeline**, no topo do quadro, tem as quatro primeiras opções.
 
 <Warning>
   Não é possível excluir o pipeline padrão: defina outro como padrão antes. Um pipeline que ainda tem negócios também não pode ser excluído: mova ou exclua os negócios primeiro.
@@ -101,7 +102,13 @@ Abra o menu no cabeçalho da coluna:
 | **Mover para a direita** | Troca a etapa de lugar com a próxima. Só vale entre as etapas que você criou. |
 | **Excluir etapa** | Exclui a etapa. |
 
-**Novo contato** e as colunas de fechamento não podem ser excluídas nem movidas. Para reordenar várias etapas de uma vez, abra **Editar pipeline** e arraste as etapas na lista **Etapas**; **Novo contato** fica sempre em primeiro.
+**Novo contato** e as colunas de fechamento não podem ser excluídas nem movidas.
+
+### Adicionar e reordenar no Editar pipeline
+
+Em **Editar pipeline**, a lista **Etapas** mostra **Novo contato** fixo em primeiro e as etapas que você criou. Arraste as etapas para mudar a ordem e use **Adicionar etapa** para criar etapas novas, com nome e cor. Uma etapa nova pode ser arrastada para qualquer posição entre as outras e removida pelo **×** antes de salvar. Ao clicar em **Salvar**, as etapas novas são criadas e a ordem é aplicada.
+
+Para excluir uma etapa que já existe, use **Excluir etapa** no menu dela, no quadro.
 
 Ao excluir uma etapa que tem negócios, escolha a etapa aberta que vai recebê-los. As tarefas obrigatórias da etapa excluída viram tarefas comuns.
 
