@@ -31,6 +31,7 @@
               "atendimento/conversas",
               "atendimento/responder",
               "atendimento/ao-vivo",
+              "atendimento/mensagens-agendadas",
               "atendimento/notificacoes",
               "atendimento/contatos"
             ]
@@ -91,6 +92,7 @@
               "configuracoes/agentes",
               "configuracoes/times",
               "configuracoes/etiquetas",
+              "configuracoes/feriados",
               "configuracoes/atributos-personalizados",
               "configuracoes/modelos-whatsapp",
               "configuracoes/integracoes",

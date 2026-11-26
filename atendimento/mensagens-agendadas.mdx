@@ -1,0 +1,60 @@
+---
+title: "Mensagens agendadas"
+description: "Agende uma mensagem ou nota interna numa conversa, uma vez ou com recorrência, para sair na hora marcada mesmo com você offline."
+icon: "calendar-clock"
+---
+
+Uma mensagem agendada sai sozinha na hora marcada, em seu nome, mesmo que você esteja offline. Use para retornos combinados, lembretes ao cliente ou notas internas para a equipe.
+
+## Agendar uma mensagem
+
+<Steps>
+  <Step title="Abrir o agendamento">
+    Na conversa, escreva a mensagem na caixa de resposta (ou deixe em branco) e clique no relógio no rodapé (**Agendar mensagem**). A janela abre com o texto e o arquivo que estavam na caixa.
+  </Step>
+  <Step title="Data e hora">
+    Escolha **Data** e **Hora**. O horário precisa ser no futuro.
+  </Step>
+  <Step title="Repetir">
+    Em **Repetir**, deixe **Não repete** ou escolha **Diária**, **Semanal** ou **Mensal**. Numa recorrência, preencha **A cada** (por exemplo, a cada 2 semanas) e o **Término**, que é obrigatório e pode ser em até 1 ano depois do primeiro envio.
+  </Step>
+  <Step title="Opções">
+    - **Apenas dias úteis**: não envia em sábado, domingo nem nos [feriados da conta](/configuracoes/feriados).
+    - **Nota interna**: a mensagem entra como nota, visível só para a equipe.
+    - **Reabrir o atendimento**: se a conversa estiver resolvida na hora do envio, ela é reaberta.
+  </Step>
+  <Step title="Agendar">
+    Clique em **Agendar**. A caixa de resposta é limpa e o agendamento aparece logo acima dela.
+  </Step>
+</Steps>
+
+Cada agendamento leva um arquivo. Se a caixa de resposta tiver mais de um anexo, deixe só um antes de agendar.
+
+Se a sua assinatura estiver ligada na caixa de resposta, ela vai junto na mensagem agendada. Notas internas não levam assinatura.
+
+## Como a recorrência funciona
+
+- A mensagem repete na mesma hora local de quem agendou.
+- No mensal, o dia se mantém: um agendamento no dia 31 sai no último dia dos meses mais curtos e volta ao dia 31 nos meses que têm 31 dias.
+- Com **Apenas dias úteis**, a diária pula os dias não úteis; a semanal e a mensal passam para o próximo dia útil, na mesma hora. O primeiro envio não pode cair num dia não útil.
+- Se o envio atrasar porque o sistema ficou fora do ar, sai uma mensagem e os envios que ficaram para trás são pulados.
+
+## Na conversa
+
+Os agendamentos pendentes aparecem acima da caixa de resposta, com a data do próximo envio, a recorrência e quem agendou. Qualquer pessoa com acesso à conversa pode clicar em **Cancelar**.
+
+Não é possível editar um agendamento. Para mudar, cancele e crie outro.
+
+## Tela de mensagens agendadas
+
+Abra pelo menu lateral, em **Atendimentos → Mensagens agendadas**. Os filtros no topo separam **Pendentes**, **Enviadas**, **Canceladas** e **Com falha**. Cada linha mostra o contato, o canal, a mensagem, o próximo envio (ou o último, fora de Pendentes), a recorrência, quem agendou e a situação.
+
+<Note>
+  Administradores veem todos os agendamentos da conta. Atendentes veem os que eles mesmos agendaram.
+</Note>
+
+## Quando o envio falha
+
+Se a mensagem não puder ser criada, o agendamento fica **Falhou**, com o motivo na tela de mensagens agendadas, e a recorrência para. Não há nova tentativa automática.
+
+Se quem agendou não estiver mais na conta, a mensagem sai sem remetente.
